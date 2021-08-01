@@ -285,7 +285,6 @@ class Htmlempresas extends classHtml implements funcionalidad {
 					
      		         <td width="5%" align="center" class="tabla_titubar">Cert.</td>
      		         <td width="5%" align="center" class="tabla_titubar">Editar</td>
-     		         <td width="5%" align="center" class="tabla_titubar">Borrar</td>
      		       </tr>';
 
 		if (mysqli_num_rows ( $this->arrEmpresas ) == 0) {
@@ -309,7 +308,6 @@ class Htmlempresas extends classHtml implements funcionalidad {
 
 			echo '   <td align="center" class="tabla_listado"><input class="btnVer" type="image" src="../images/lupa.gif" width="16" height="17" border="0" value="' . $rowEmpresa ["IdEmpresa"] . '"/></td>
      		         <td align="center" class="tabla_listado"><input class="btnEdit" type="image" src="../images/list_modificar.gif" width="16" height="16" border="0" value="' . $rowEmpresa ["IdEmpresa"] . '"/></td>
-     		         <td align="center" class="tabla_listado"><input class="btnElim" type="image" src="../images/list_eliminar.gif"  width="16" height="16" border="0" value="' . $rowEmpresa ["IdEmpresa"] . '"/></td>
      		       </tr>';
 		}
 

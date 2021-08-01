@@ -117,14 +117,6 @@ define("ImgWidthThumbnail",110);  // La anchura para los thumbnails
 define("ImgHeight",160); // La altura para las imagenes del detalle de las noticias
 define("ImgWidth",220);  // La anchura para las imagenes del detalle de las noticias
 
-// Constantes para la carga de archivos desde el SII
-define("SIIFactCompra",160); // Factura de compra
-define("SIINCCompra",160); // Nota de crédito de compra
-define("SIINDCompra",160); // Nota de débito de compra
-
-define("SIIFactVenta",160); // Factura de venta
-define("SIINCVenta",160); // Nota de crédito venta
-define("SIINDVenta",160); // Nota de debito venta
 
 
 

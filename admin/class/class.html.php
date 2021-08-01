@@ -571,17 +571,7 @@ class classHtml {
 				<meta name='revisit-after' content='1 days' />
 				<meta property='og:author' content='".$this->Autor	."' />
 
-				<meta name='keywords' content='".$this->tags."' />
-				<meta name='description' content='".$this->Resumen."' />
-				<meta property='og:url' content='http://".$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']."'/>
-				<meta property='og:language' content='sp-gb' />
-				<meta property='og:description' content='".$this->Resumen."' />
-				<meta property='og:title' content='".$this->Titulo."'/> 				 
-				<meta property='og:type' content='article'/> 				 
-				<meta property='og:site' content='".NombreAplicacion."'/> 				 
 				
-				<meta property='og:image' content='http://".str_replace('&',"%26",$_SERVER['HTTP_HOST']."/upload/images/ex_".$this->NombreFotoPrincipal)."'/> 				 
-
 				</head>
 				<body class='fullwidth'>
 				  <form method='get'>

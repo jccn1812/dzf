@@ -97,7 +97,7 @@ class Htmlinformes extends classHtml implements funcionalidad {
 				$this->agregar();
 				$this->bodyAdministrador ();
 				$this->closeForm ();
-				$this->volverPanel ();
+				$this->volverAtras ();
 				$this->footer ();
 			break;
 
@@ -161,7 +161,7 @@ class Htmlinformes extends classHtml implements funcionalidad {
 					$this->agregar();
 					$this->bodyAdministrador ();
 					$this->closeForm ();
-					$this->volverPanel ();
+					$this->volverAtras ();
 					$this->footer ();
 
 				}
@@ -410,7 +410,7 @@ class Htmlinformes extends classHtml implements funcionalidad {
            <table border="0" align="center">
             <tr>
               <td>
-              <input id="volverAtras" type="button" class="Boton" name="button2" id="button2" value="Cancelar" />
+              <input id="volverInformes" type="button" class="Boton" name="button2" id="button2" value="Cancelar" />
               </td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>

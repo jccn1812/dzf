@@ -50,12 +50,17 @@ $("#bntSbm").click(function(){
                                  f.submit();
  				})     
 
+  $("#volverInformes").click(function(){       
+          f.accion.value="";                       
+          f.action="mantenedorInformes.php";
+          f.submit();
+          })
 
 
 
 $("#volverAtras").click(function(){       
                                  f.accion.value="";                       
-                                 f.action="mantenedorInformes.php";
+                                 f.action="mantenedorEmpresas.php";
                                  f.submit();
                                  })
 
@@ -68,7 +73,7 @@ $("#volverFormulario").click(function(){
 
 
 $("#volverPanel").click(function(){                              
-                                 f.action="selector.php";
+                                 f.action="mentenedorEmpresas.php";
                                  f.submit();
                                  })
 
