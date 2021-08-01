@@ -1,0 +1,955 @@
+/* Default Stylesheet */
+
+															/** BODY ELEMENTS **/
+body {
+	color: #fff;
+	background-color: #CCCCCC;
+	background-image:url(../images/fondo_cuadro.jpg);
+	
+	}
+	
+	
+
+ p {
+    /*color: #333333;
+    color: rgb(0,0,128);
+    font-family: "Lucida Grande",Tahoma,Arial,Verdana,sans-serif;
+    font-weight: normal;
+    */
+    color: #0B3861;
+    margin: 0.3em 0;
+    
+}
+
+
+div#welcome{ 	background-color: #FFFFFF;
+
+}
+
+
+															/** MAIN CONTAINERS **/
+div#container {
+	margin: 0em auto;
+	background-color: #fff;  /*Color de fondo sitio*/
+	/*background-color: #fff8ef;  Color de fondo sitio*/
+	/*border: 1px solid #FF0101;*/
+	overflow:auto;
+	
+		
+	}
+	div#header {
+		color: inherit;
+		background-color:#fff;; /* Color fondo header*/
+		border: 1px solid #e5e5e5;	
+		border-width: 0 0 0 0;
+		background-image:url(../images/fondoNaranjo.jpg);
+		background-repeat:repeat-x;
+		background-position:0% 50%;		
+		padding:5px;
+		}
+		div#header-in {
+			/*padding: 20px;*/
+			height:128px;
+			}
+		
+		
+		
+		                 
+		
+		   #gabinetes 
+		   {	
+		    clear:both;
+		    position:relative;
+		    float:right;		
+		    bottom:-15px;		
+		    width:auto;
+		    
+		   }
+		   
+		   #columnas 
+		   {
+		    position:relative;
+		    float:right;
+		    bottom:5px;
+		    }
+		    
+		    
+		    #divBuscador
+		    {
+		    position:relative;
+		    float:right;
+		    top:35px;
+		    }
+		    
+
+   		    #gabDest 
+		   {
+		    position:relative;
+		    float:right;
+		    
+		   }
+		   
+		   
+		  
+		
+		
+	 div#imgLogo
+		    {	
+		        clear:both;
+		        position:absolute;
+		        float:left;		
+		        top:20px;
+		        /*left:158px;*/
+		        width:auto;
+		    }		
+		    
+			
+	div#content-wrap {
+		padding: 0px 0;
+		padding-top:10px;
+		
+		
+		}
+		div.content {
+			color: inherit;
+			background-color: #fff;
+			border: 1px solid #e5e5e5;
+			border-width: 0 0 0 0 ;
+			}
+			div.content-in {
+				padding: 0px;
+				padding-right:5px;
+				background-color:#fff; /* Fondo contenedor*/
+				overflow:auto;
+				
+				
+				}
+		div.column {
+			width: 200px;
+			color: inherit;
+			/*background-color: #fff;  Color fondo columna izquierda*/
+			border: 1px solid #000000;
+			border-width: 0 0 0 0;
+			}
+			div.column-in {
+				padding-left: 10px;
+				
+				}
+	div#footer {
+		color: inherit;
+		background-color: #fff;
+		border: 1px solid #e5e5e5;
+		border-width: 0 0 0 0;
+		}
+		div#footer-in {
+			padding: 20px;			
+			background: #fff;  /* Fondo pie de página */
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:9px;
+			color:#666666;
+			margin: 0 auto;
+			text-align: center;
+		
+			}
+		
+		
+		#titulo
+		 {
+		  color:#0B6D9E;
+		  font-family:verdana;
+		  font-size:12px;
+		  font-weight:bold;
+		  text-decoration:underline;
+		 }
+		 
+		 #tituloB
+		 {
+		  color:#0B6D9E;
+		  font-family:verdana;
+		  font-size:11px;
+		  font-weight:bold;
+		  text-decoration:underline;
+		 }
+		 
+		/* Los docs*/
+		 #resumen
+		  {
+		   font-family:verdana;
+		   font-size:11px;
+		   color: #031D77;
+		   text-align:left;
+		 }
+		  	
+		  #resumenB
+		  {
+		   font-family:verdana;
+		   font-size:10px;
+		   color: #031D77;
+		   text-align:left;
+		  	}
+			
+		
+		 #autor
+		  {
+		 	font-family:verdana;
+			font-size:10px;
+			color: #031D77;
+			text-align:left;
+			font-style:italic;
+		  	}
+		
+		 #dcto
+			{
+			font-family:verdana;
+			font-size:10px;
+			color: #031D77;
+			text-align:left;
+			font-style:italic;
+		  	}
+		
+		#fechaPub
+		 {
+			font-family:verdana;
+			font-size:10px;
+			color: #031D77;
+			text-align:left;
+			font-style:italic;
+		 	}
+		 #linea
+		 {
+		  border-top: dotted 1px #003399;
+		 }
+		 
+		 
+		 #contenido
+		 {
+		 font-family:verdana;
+		 font-size:12px;
+		 color: #031D77;
+		 text-align:left;
+		 		  	}
+		 		  	
+		#contenidoB
+		 {
+		 font-family:verdana;
+		 font-size:11px;
+		 color: #031D77;
+		 text-align:left;
+		 font-weight:bold;
+		 		  	} 		  	
+		
+		.lista
+		 {
+		 font-family:verdana;
+		 font-size:11px;
+		 color: #031D77;
+		 text-align:left;
+		 font-weight:bold;
+				  	} 		  	
+		
+		
+		/* Las news */
+		
+		
+		
+		#tituloNews
+		 {
+		  color:#0B6D9E;
+		  font-family:verdana;
+		  font-size:10px;
+		  font-weight:bold;
+		  padding-bottom:10px;
+		  
+		 }
+		 
+		 #tituloBNews
+		 {
+		  color:#0B6D9E;
+		  font-family:verdana;
+		  font-size:11px;
+		  font-weight:bold;
+		  text-decoration:underline;
+		 }
+		 
+		 
+		  #tituloBNewsHome
+		 {
+		  font-size: 1.50em; 
+		  color:#CC3300;
+		  font-weight:bold;
+		 }
+		 
+		
+		 #resumenNews
+		  {
+		   font-family:verdana;
+		   font-size:11px;
+		   color: #031D77;
+		   text-align:left;
+		 }
+		  	
+		  #resumenBNews
+		  {
+		   font-family:verdana;
+		   font-size:9px;
+		   color: #031D77;
+		   text-align:left;
+		  	}
+			
+		
+		 #autorNews
+		 {
+		   font-family:verdana;
+		   font-size:9px;
+		   color: #031D77;
+		   text-align:right;
+		   font-style:italic;
+		 }
+		 
+		 #linkNews
+		 {
+		  font-family:verdana;
+		  font-size:9px;
+		  color: #031D77;
+		  text-align:left;
+		  font-style:italic;
+		 }
+		
+		 
+		 
+		
+		 #dctoNews
+		 {
+		  font-family:verdana;
+		  font-size:13px;
+		  color: #031D77;
+		  text-align:left;
+		  font-style:italic;
+		 }
+		
+		#fechaPubNews
+		 {
+		  font-family:verdana;
+		  font-size:10px;
+		  color: #031D77;
+		  text-align:left;
+		  font-style:italic;
+		 }
+		 
+		 
+		 #contenidoNews
+		 {
+		 font-family:verdana;
+		 font-size:11px;
+		 color: #031D77 !important;
+		 text-align:justify;
+		 border: 1px; 
+		 border-style:dotted !important;
+		 border-style:dashed; 
+		 border-color:#0B6D9E; 		 
+		 padding:10px;
+		 	overflow:auto;
+		 
+		 }
+		 		  	
+		#contenidoBNews
+		 {
+		 font-family:verdana;
+		 font-size:11px;
+		 color: #031D77;
+		 text-align:left;
+		 font-weight:bold;
+		 }
+		
+		.imgBNews
+		{
+		float: right;
+		display: inline;
+		padding-left:10px;
+		
+		}
+	
+		#imgBNewsHome
+		{
+		 
+		  margin:0 auto 0 auto; 
+		  width: 100%;
+		  text-align:center;
+				
+		}
+	
+	
+	
+		.imgBPie
+		{		
+		padding-left:10px;		
+		}
+		
+		#parrNoticias{
+		font-size: 101%;
+		font-weight: normal;
+		font-style: normal;
+		
+		}
+	
+		
+		#divEdiciones
+		{
+		 font-family:arial;
+		 font-size:9px;
+		 color: #031D77;
+		 text-align:center;
+		 font-weight:bold;
+		 border: 1px; 
+		 border-style:dotted !important;
+		 border-style:dashed; 
+		 border-color:#0B6D9E; 	
+		 padding-top:5px;
+		 padding-bottom:5px;
+		 background-color:#ffffff;
+		 margin-bottom:10px;
+		 
+		 }
+		 
+		 
+		 #divNoticiasPorEdicion
+		{
+		font-family:verdana;
+		font-size:11px;
+		color: #031D77 !important;
+		text-align:justify;
+		border: 1px; 
+		border-style:dotted !important;
+		border-style:dashed; 
+		border-color:#0B6D9E; 		 
+		padding:10px;
+		overflow:auto;
+		background-color:#ffffff;	
+			
+		}
+		
+		#divdctos
+				{
+				font-family:verdana;
+				font-size:11px;
+				color: #031D77 !important;
+				text-align:justify;
+				border: 1px; 
+				border-style:dotted !important;
+				border-style:dashed; 
+				border-color:#0B6D9E; 		 
+				padding:10px;
+				overflow:auto;
+				background-color:#ffffff;	
+					
+				}
+		
+		
+		
+		 
+		 h9 {  font-size: 10px; color:#CC3300  }
+		 
+		 
+		#textoEdiciones
+		{
+		  text-align:center;
+		}
+		
+		.combo_txt {
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;
+		color:#333333;
+		border:solid 1px;
+		}		
+	
+		.txtcampo{
+		color:#000000;
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:11px;
+		
+		}
+		
+		
+		.txtBuscar{
+			color:#000000;
+			font-family:Arial, Helvetica, sans-serif;
+			font-size:10px;
+			border: 1px solid #C0C0C0;
+			background-color:#ffffff;
+			
+
+							}
+		
+		
+		.txtFormHome{
+				color:#000000;
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:12px;
+				border: 1px solid #C0C0C0;
+				background-color:#ffffff;
+					
+		
+							}
+		
+		
+		.domRoot{
+		width:200px;
+		}
+		
+		
+		
+		
+		
+		
+		#formContacto
+		{
+		 font-family:verdana;
+		 font-size:12px;
+		 color: #031D77 !important;
+		 text-align:justify;
+		 border: 1px; 
+		 border-style:dotted !important;
+		 border-style:dashed; 
+		 border-color:#0B6D9E; 		 
+		 padding:10px;
+		 overflow:auto;
+		 height:420px;
+				 
+		 }
+
+
+		 #contenidoContactos
+		 {
+		 text-align:justify;
+		 border: 1px; 
+		 border-style:dotted !important;
+		 border-style:dashed; 
+		 border-color:#0B6D9E; 		 
+		 padding:20px;
+		 overflow:auto;
+		 background-image:url(../images/sobre.jpg);
+		 background-repeat:no-repeat;
+		 background-position:bottom right;		
+		 
+		 }
+		
+
+
+		#nombrecampo{ 
+		font-family: Arial; 
+		font-size: 12px;
+		background-color: rgb(255,255,255); 
+		color: rgb(0,0,128); 		
+		width:260px;
+		
+		
+
+		}
+		
+		#controlcampo{
+		
+		width:140px;		
+		
+		}
+		
+		
+		
+		#contentNews{
+		width:500px;
+		height:auto;
+		overflow:auto;
+		
+		}
+		
+		
+		#DivIdentidad
+		{
+		/*font-family:verdana;
+		font-size:11px;*/
+		color: #031D77 !important;
+		text-align:justify;
+		border: 1px; 
+		border-style:dotted !important;
+		border-style:dashed; 
+		border-color:#0B6D9E; 		 
+		padding:10px;
+		overflow:auto;
+		background-color:#ffffff;	
+		
+		}
+		
+		
+		#DivProductos
+		{
+		font-family:verdana;
+		font-size:11px;
+		color: #031D77 !important;
+		text-align:justify;
+		border: 1px; 
+		border-style:dotted !important;
+		border-style:dashed; 
+		border-color:#0B6D9E; 		 
+		padding:10px;
+		overflow:auto;
+		background-color:#ffffff;	
+				
+				
+		}
+		
+		#nodos
+		{
+		padding-left:20px;
+		}
+		
+		
+		#MapaDelSitio
+		{
+		/*font-family:verdana;
+		font-size:11px;*/
+		color: #031D77 !important;
+		text-align:justify;
+		border: 1px; 
+		border-style:dotted !important;
+		border-style:dashed; 
+		border-color:#0B6D9E; 		 
+		padding:10px;
+		overflow:auto;
+		background-color:#ffffff;	
+			
+						
+		}
+
+		#CursosSeminarios
+		{
+		/*font-family:verdana;
+		font-size:11px;*/
+		color: #031D77 !important;
+		text-align:justify;
+		border: 1px; 
+		border-style:dotted !important;
+		border-style:dashed; 
+		border-color:#0B6D9E; 		 
+		padding:10px;
+		overflow:auto;
+		background-color:#ffffff;	
+		
+		}
+		
+		
+		
+		#losCursos
+		{
+		font-family:verdana;
+		font-size:11px;
+		color: #031D77 !important;
+		text-align:justify;
+		border: 1px; 
+		}
+
+
+
+		
+		/*El simulador */
+		#tblGrillaFiltro
+		{
+		height:100px;
+		width:100%;	;
+		border:1px solid #f0f0f0;
+		}
+		
+		#celdaConteiner
+		{
+		width:150px;	;
+		}
+		
+		#tblGrillaSelector
+		{
+		height:100px;
+		width:150px;	;
+		border:1px solid #f0f0f0;
+		}
+		
+		#fltNacional
+		{
+		padding-left:10px;
+		padding-bottom:20px;
+		
+		}
+		
+		#fltRegion
+		{
+		padding-left:10px;
+		padding-bottom:20px;
+		
+		}
+		
+		#fltRegComuna
+		{
+		padding-left:10px;
+										
+		}
+		
+		#fltRegProvincia
+		{
+		padding-left:10px;
+								
+		}
+		
+		#fltCirc
+		{
+		padding-left:10px;
+					
+		}
+		
+		#fltCircDist	
+		{
+		padding-left:10px;
+							
+		}
+	
+		
+		.titFiltro
+		{
+		 color:#CC3300;
+		 text-decoration:underline;	
+		 font-weight:bold;
+		}
+		
+		
+		.topCaluga{
+		background-color:#CC3300;
+		color:#ffffff;
+		padding-left:15px;
+		font-weight:bold;
+	
+		
+		}
+		
+		#datosUsuario
+				{
+				/*font-family:verdana;
+				font-size:11px;
+				color: #031D77 important;*/
+				text-align:left;
+				border:1px; 
+				border-style:dotted !important;
+				border-style:dashed; 
+				border-color:#0B6D9E; 		 
+				padding:10px;
+				overflow:hidden;
+				background-color:#ffffff;
+				background-image:url(../images/llave2.jpg);
+				background-repeat:no-repeat;
+				background-position:bottom right;		
+		 
+				
+				}
+				
+				
+		#validoCSS
+				{
+				border-top:10px;				
+				padding-left:50px;
+				overflow:hidden;
+						
+				
+				}
+				
+				
+		#divMarcoLinks
+				{
+				background-repeat:no-repeat;
+				background-image:url(../images/webBrowser.jpg);
+				background-position:bottom right;		
+				/*font-family:verdana;
+				font-size:11px;*/
+				color: #031D77 !important;
+				text-align:left;
+				border: 1px; 
+				border-style:dotted !important;
+				border-style:dashed; 
+				border-color:#0B6D9E; 		 
+				padding:10px;
+				overflow:hidden;
+				background-color:#ffffff;
+				width:168px;
+				
+				}		
+				
+		#divTitLogin		
+				{
+				
+				color: #031D77 !important;
+				text-align:center;
+				border: 1px; 
+				border-style:dotted !important;
+				border-style:dashed; 
+				border-color:#0B6D9E; 		 
+				padding:1px;
+				overflow:auto;
+				background-color: #003399;
+				color:#FFFFFF;
+				}
+				
+		
+		#divBotonera		
+				{
+				width:200px;
+				margin:0 auto;
+				text-align:left;
+				}	
+				
+				
+		.divvideo		
+				{
+				width:400px;
+				margin:0 auto;
+				text-align:left;
+				}	
+				
+				
+				
+		#imgSoporte
+				{
+				margin: 5px auto;
+				display: block;
+
+				}
+		
+		
+		#divTextoGabinetes
+				{
+				 /*font-family:verdana;
+				 font-size:11px;*/
+				 color: #031D77 !important;
+				 text-align:left;
+				 border: 1px; 
+				 border-style:dotted !important;
+				 border-style:dashed; 
+				 border-color:#0B6D9E; 		 
+				 padding:10px;
+				 overflow:auto;
+				 background-color:#ffffff;
+
+				
+				}
+				
+		#divExterno{
+		  		padding-top:10px;
+				}
+				
+		#divframenews {
+				background-color:#ffffff;
+				
+		}
+		           
+				
+		#vitrina {
+				background-color:#ffffff;
+				height:800px;
+		}		
+				
+		
+		
+		#welcome{
+				
+		
+				}
+				
+				
+				
+				
+				
+				
+			
+	
+		
+		
+		 	
+	
+
+
+input{
+ border:solid 1px #C0C0C0;
+ font-family: Arial ; 
+ font-size: 12px;
+ background-color: rgb(255,255,255); 
+ color: rgb(0,0,128); 
+ 
+ 
+}	
+
+ul {
+ list-style-position: inside;
+ list-style-type: disc; 
+  line-height: 1.50em;
+  }
+
+
+
+
+textarea {border:solid 1px #C0C0C0 ;
+font-family: Arial ; 
+ font-size: 12px;
+ background-color: rgb(255,255,255); 
+ color: rgb(0,0,128); }		
+ 
+
+.zoom{
+border:solid 1px #0A6E9F;
+cursor:pointer;
+}
+
+
+.td_nombreinstitucion{
+font-family:Arial, Helvetica, sans-serif;
+font-size:9px;
+font-weight:bold;
+color:#000000;
+text-align:left;
+vertical-align:top;
+height:13px;
+}
+
+.BotonHome { cursor:pointer;  
+font-family: Arial; 
+font-size: 10px;
+background-color: rgb(255,255,255); 
+color: rgb(0,0,128); 
+border: 1px #999999 solid;
+text-align:center;
+}
+
+															/** SUB CONTAINERS **/
+* { }
+
+
+
+
+
+
+															/** LISTS **/
+* { }
+
+
+
+
+
+
+															/** TYPOGRAPHY **/
+* { }
+
+
+
+
+
+
+															/** FORMS **/
+* { }
+
+
+
+
+
+
+															/** END **/

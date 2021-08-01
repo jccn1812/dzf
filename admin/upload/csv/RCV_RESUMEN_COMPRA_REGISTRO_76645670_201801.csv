@@ -1,0 +1,5 @@
+Tipo Documento;Total Documentos;Monto Exento;Monto Neto;IVA Recuperable;IVA Uso Comun;IVA No Recuperable;Monto Total
+Factura(30);0;0;0;0;0;0;0
+Factura Electrónica(33);103;3750;23229428;4413591;0;0;27790153
+Factura no Afecta o Exenta Electrónica(34);8;229970;0;0;0;0;229970
+Nota de Crédito Electrónica(61);5;0;246318;46801;0;0;293119
