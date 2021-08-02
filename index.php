@@ -54,10 +54,15 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
           <tbody>
             <tr>
               <td width="315" height="53" valign="top"><a href="" class="btn-get-started animate__animated animate__fadeInUp">&nbsp;
-                   &nbsp;&nbsp;&nbsp;&nbsp;
-                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                   <input type="submit" class="align-bottom" onClick="MM_openBrWindow('ingreso_de_cliente.php','ingreso','width=400,height=500')" value="Ingreso de cliente">
-              </a></td>
+                 </a>
+
+              <button type="button" class="align-bottom"  data-bs-toggle="modal" data-bs-target="#modalForm">
+                Ingreso de clientes
+              </button>
+
+
+             
+            </td>
             </tr>
           </tbody>
         </table>
@@ -74,6 +79,42 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
       </div>
     </div><br>
+
+<!-- Modal -->
+<div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ingreso de Clientes</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label class="form-label">Ingrese su RUT</label>
+                        <input type="text" class="form-control" id="rutCliente" name="rutCliente" placeholder="Rut del Cliente" value="" />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                    </div>
+                    <!--<div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe" />
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                    </div>-->
+                    <div class="modal-footer d-block">
+                        <p class="float-start">Si lo desea <a href="#">Reinicie su password</a>&nbsp;aqu&iacute;</p>
+                        <button type="submit" class="btn btn-warning float-end">Ingresar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fin Modal -->
+
+
+
   </section>
 
   <!-- ======= Header ======= -->
@@ -340,6 +381,10 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+
+
+
+  
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
