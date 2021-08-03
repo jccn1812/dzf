@@ -7,6 +7,25 @@
 (function() {
   "use strict";
 
+
+  /** Validacion del formulario login */
+
+
+
+  const forms = document.querySelectorAll('.requires-validation')
+Array.from(forms)
+  .forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+
+
   /**
    * Easy selector helper function
    */
@@ -93,6 +112,31 @@
     window.addEventListener('load', toggleBacktotop)
     onscroll(document, toggleBacktotop)
   }
+  
+  /**
+   * Boton del popUp Login
+   */
+
+  $('#btnSubmitForm').click(function()
+  {
+     if($('#password').val()=='' || $('#rutCliente').val()==''){
+       return false;
+     }
+
+     $.post("checkLogin.php",{
+                              rut:$("#rutCliente").val(),
+    	                        password:$("#password").val()
+    	                       },function(data){ 
+    	                    	   alert(data);                   
+	  	})
+
+     return;
+
+
+  });
+
+
+
 
   /**
    * Mobile nav toggle

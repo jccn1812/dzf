@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DZ Certifica</title>
+  <title>DFZ Certifica</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -92,11 +92,11 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                 <form>
                     <div class="mb-3">
                         <label class="form-label">Ingrese su RUT</label>
-                        <input type="text" class="form-control" id="rutCliente" name="rutCliente" placeholder="Rut del Cliente" value="" />
+                        <input type="text" class="form-control" id="rutCliente" name="rutCliente" placeholder="Rut del Cliente" value="" required />
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required/>
                     </div>
                     <!--<div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="rememberMe" />
@@ -104,7 +104,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                     </div>-->
                     <div class="modal-footer d-block">
                         <p class="float-start">Si lo desea <a href="#">Reinicie su password</a>&nbsp;aqu&iacute;</p>
-                        <button type="submit" class="btn btn-warning float-end">Ingresar</button>
+                        <button type="button" id="btnSubmitForm" class="btn btn-warning float-end">Ingresar</button>
                     </div>
                 </form>
             </div>
@@ -384,6 +384,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 
 
 
+  <script src="assets/js/jquery.js"></script>
   
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -393,9 +394,13 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
+
 
 </body>
 

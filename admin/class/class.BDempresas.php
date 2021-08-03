@@ -21,15 +21,26 @@ class empresas extends Database
   public $result;
   
   public $existe;
-  
   public $IdEmpresa;
+
+  public $rut;
+  public $password;
   
 
   // Los sets para las propiedades
-  
   function setIdEmpresa($IdEmpresa)
   {
   	$this->IdEmpresa = $IdEmpresa;
+  }
+
+  function setRut($rut)
+  {
+  	$this->rut = $rut;
+  }
+
+  function setPassword($password)
+  {
+  	$this->password = $password;
   }
   
   
@@ -67,6 +78,17 @@ class empresas extends Database
   	return $this->result;
   }
   
+  public function datosLoginEmpresa()
+  {
+  	$connection = Database::Connect();
+  	$this->query = "call sp_EtereusCMS_select_checkLoginClienteEmpresa('".$this->rut."','".$this->password."')";
+    $this->result = Database::Reader($this->query,$connection);
+  	Database::desconectar($connection);
+  	return $this->result;
+  }
+  
+
+
   
   
   public function Elimina() {
