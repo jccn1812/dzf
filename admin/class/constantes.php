@@ -40,6 +40,8 @@ define("BDPort","3306");               // El puerto
 
 // Constantes para los correos electr�nicos
 define("EMAILADMIN","admin@dfzcertifica.com");// Cuenta de correos para el envio
+define("EMAILADMINPASS","Dfzcertifica2021.");// Cuenta de correos para el envio
+
 define("servidorSMTP","mail.dfzcertifica.com");// Servidor de correos
 define("mensajeFormularioContactos","Gracias por su interes en contactarse con nosotros.
                                      Estamos muy interesados en conocer su opini&oacute;n por lo

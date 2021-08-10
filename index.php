@@ -1,3 +1,7 @@
+<?php
+       require_once 'admin/class/sesion.class.php';
+       session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,22 +54,33 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
           <i class="bi bi-phone d-flex align-items-center ms-4"><span>
           +56 2 2904 1494</span></i>
         </p>
-        <table width="321" height="59" border="0">
-          <tbody>
-            <tr>
-              <td width="315" height="53" valign="top"><a href="" class="btn-get-started animate__animated animate__fadeInUp">&nbsp;
-                 </a>
+        <?php
 
-              <button type="button" class="align-bottom"  data-bs-toggle="modal" data-bs-target="#modalForm">
-                Ingreso de clientes
-              </button>
+        $sesion = new sesion();
+        If( $sesion->getSession('ID_EMPRESA')=="" )
+        {
+        ?>  
 
+            <table width="321" height="59" border="0">
+              <tbody>
+                <tr>
+                  <td width="315" height="53" valign="top"><a href="" class="btn-get-started animate__animated animate__fadeInUp">&nbsp;
+                    </a>
 
-             
-            </td>
-            </tr>
-          </tbody>
-        </table>
+                  <button type="button" class="align-bottom"  data-bs-toggle="modal" data-bs-target="#modalForm">
+                    Ingreso de clientes
+                  </button>
+
+                </td>
+                </tr>
+              </tbody>
+            </table>
+        <?php 
+        } else{
+          echo 'Logeado';
+        }
+        ?>
+
         <p>&nbsp;</p>
       </div>
       <a href="" class="btn-get-started animate__animated animate__fadeInUp">
@@ -79,39 +94,38 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
       </div>
     </div><br>
-
-<!-- Modal -->
-<div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ingreso de Clientes</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label class="form-label">Ingrese su RUT</label>
-                        <input type="text" class="form-control" id="rutCliente" name="rutCliente" placeholder="Rut del Cliente" value="" required />
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required/>
-                    </div>
-                    <!--<div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="rememberMe" />
-                        <label class="form-check-label" for="rememberMe">Remember me</label>
-                    </div>-->
-                    <div class="modal-footer d-block">
-                        <p class="float-start">Si lo desea <a href="#">Reinicie su password</a>&nbsp;aqu&iacute;</p>
-                        <button type="button" id="btnSubmitForm" class="btn btn-warning float-end">Ingresar</button>
-                    </div>
-                </form>
+    <!-- Modal -->
+    <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ingreso de Clientes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Ingrese su RUT</label>
+                            <input type="text" class="form-control" id="rutCliente" name="rutCliente" placeholder="Rut del Cliente" value="" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required/>
+                        </div>
+                        <!--<div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe" />
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>-->
+                        <div class="modal-footer d-block">
+                            <p class="float-start">Si lo desea <a href="#">Reinicie su password</a>&nbsp;aqu&iacute;</p>
+                            <button type="button" id="btnSubmitForm" class="btn btn-warning float-end">Ingresar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Fin Modal -->
+    <!-- Fin Modal -->
 
 
 
@@ -133,7 +147,16 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
           <li><strong><a href="nuestra_empresa.php">NUESTRA EMPRESA</a></strong></li>
           <li><strong><a href="servicios.php">SERVICIOS</a></strong></li>
           <li><strong><a href="objetivos.php">OBJETIVOS</a></strong></li>
-          <li><strong><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a></strong></li>
+          
+          <?php
+          $sesion = new sesion();
+          If( $sesion->getSession('ID_EMPRESA')!="" )
+          {
+          ?>  
+            <li><strong><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a></strong></li>
+          <?php
+          }
+          ?>
           <li><strong><a href="contacto.php">CONTACTO</a></strong></li>
           <li><strong><a href="">PAGAR SERVICIO AQUÍ</a></strong></li><br>
 

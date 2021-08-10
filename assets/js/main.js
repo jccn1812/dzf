@@ -8,24 +8,6 @@
   "use strict";
 
 
-  /** Validacion del formulario login */
-
-
-
-  const forms = document.querySelectorAll('.requires-validation')
-Array.from(forms)
-  .forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-
-      form.classList.add('was-validated')
-    }, false)
-  })
-
-
   /**
    * Easy selector helper function
    */
@@ -127,7 +109,10 @@ Array.from(forms)
                               rut:$("#rutCliente").val(),
     	                        password:$("#password").val()
     	                       },function(data){ 
-    	                    	   alert(data);                   
+    	                    	   if(data=='1'){
+                                  document.forms[0].method = "post";
+                                  document.forms[0].submit();
+                                }                   
 	  	})
 
      return;

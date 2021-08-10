@@ -1,6 +1,8 @@
 <?php
-       require_once 'admin/class/sesion.class.php';
+       include_once 'admin/class/sesion.class.php';
        include_once ("admin/class/class.BDempresas.php");
+
+       session_start();
 
        $rut		    = $_POST ["rut"];
        $password    = $_POST ["password"];
