@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DZ Certifica</title>
+  <title>DZF Certifica</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -42,13 +42,13 @@
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:comercial@dzcertifica.cl">comercial@dzfcertifica.cl</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+56 2 2904 1494</span></i>
-      </div>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>(+56) 2 2904 1494 - (+56 9) 5169 9440</span></i>
+-      </div>
       <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="#" class=""><i class=""></i></a>
+        <a href="#" class=""><i class=""></i></a>
+        <a href="#" class=""><i class=""></i></a>
+        <a href="#" class=linkedin"><i class=""></i></i></a>
       </div>
     </div>
   </section>
@@ -69,9 +69,15 @@
           <li><strong><a href="nuestra_empresa.php">NUESTRA EMPRESA</a></strong></li>
           <li><strong><a href="servicios.php">SERVICIOS</a></strong></li>
           <li><strong><a href="objetivos.php"><strong>OBJETIVOS</strong></a></strong></li>
-          <li><strong><a class="active" href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a></strong></li>
-          <li><strong><a href="contacto.php">CONTACTO</a></strong></li>
-          <li><strong><a href="">PAGAR SERVICIO AQUÍ</a></strong></li><br>
+          <?php
+          If( !empty($isLoged) )
+        {
+          ?>  
+          <li><strong><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a></strong></li>
+          <?php 
+        }
+        ?>          <li><strong><a href="contacto.php">CONTACTO</a></strong></li>
+          <li><strong><a href="metodos_de_pago.php">METODOS DE PAGO</a></strong></li><br>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -133,14 +139,62 @@
       </div>
     </section><!-- End Featured Section -->
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
       <div class="container">
 
-        <div class="row"> </div>
+        <div class="section-title">
+          <h2>&nbsp; Clientes</h2>
+          <p>Numerosos clientes ya confían en nosotros. </p>
+          <p>Somos conscientes de la particularidad de cada proyecto, por lo que nos ajustamos a las necesidades de cada cliente y hacemos nuestros sus objetivos.<br>
+            <br>
+          </p>
+        </div>
+
+        <div class="clients-slider swiper-container">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-9.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-10.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-11.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-15.png" class="img-fluid" alt=""></div>
+		 </div>
+          <div class="swiper-pagination"></div>
+        </div><br>
+<br>
+<br>
+<br>
+
+        <div class="container">
+          <div class="section-title">
+            <h2>&nbsp; Alianzas</h2>
+            <p><br>
+            En la industria de la certificación e inspección no se puede ser participe de todos los procesos, por lo que DZF CERTIFICA nos aliamos con otras empresas que lideran el mercado, para si ofrecer un servicio de calidad garantizada en el menor tiempo posible. </p>
+          </div>
+          <div class="clients-slider swiper-container">
+            <div class="swiper-wrapper align-items-center">
+              <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-12.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-13.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-14.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-12.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-13.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-14.png" class="img-fluid" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section><!-- End Clients Section -->
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -195,27 +249,19 @@
               
             </ul>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              El Esfuerzo 24, Padre Hurtado, <br>
-              Región Metropolitana <br><br>
-              <strong>Phone:</strong> +56 2 2904 1494<br>
-              <strong>Email:</strong> <a href="mailto:comercial@dzfcertifica.cl">comercial@dzfcertifica.cl</a><br>
-            </p>
-
+            <h4>ContactO</h4>
+            <p> El Esfuerzo 24, Padre Hurtado, <br>
+              Región Metropolitana <br>
+              <br>
+              <strong>Teléfono: </strong>(+56) 2 2904 1494 <br>
+              <strong>Celular:</strong> &nbsp;(+56) 9 5169 9440<br>
+              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i> </p>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Nuestra Empresa</h3>
             <p>Es ser una empresa de servicios en la industria, caracterizada por sus buenas prácticas, profesionalismo y especialización aportando soluciones concretas, basado en los compromisos y los requisitos exigidos por nuestros clientes</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            
             </div>
           </div>
 

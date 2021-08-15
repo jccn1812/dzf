@@ -1,3 +1,14 @@
+<?php
+       require_once 'admin/class/sesion.class.php';
+       session_start();
+
+       $sesion = new sesion();
+       $isLoged = $sesion->getSession('ID_EMPRESA');
+
+       echo "Vacio " . empty($isLoged);
+      
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +16,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Contacto</title>
+  <title>DZF Certifica</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -27,12 +38,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Eterna - v4.3.0
-  * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
 </head>
 
 <body>
@@ -40,12 +46,12 @@
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center"><i class="bi bi-envelope d-flex align-items-center"><a href="mailto:comercial@dzcertifica.cl">comercial@dzfcertifica.cl</a></i> <i class="bi bi-phone d-flex align-items-center ms-4"><span> +56 2 2904 1494</span></i></div>
+      <div class="contact-info d-flex align-items-center"><i class="bi bi-envelope d-flex align-items-center"><a href="mailto:comercial@dzcertifica.cl">comercial@dzfcertifica.cl</a></i> <i class="bi bi-phone d-flex align-items-center ms-4"><span> (+56) 2 2904 1494 - (+56 9) 5169 9440</span></i></div>
       <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="#" class=""><i class=""></i></a>
+        <a href="#" class=""><i class=""></i></a>
+        <a href="#" class=""><i class=""></i></a>
+        <a href="#" class=linkedin"><i class=""></i></i></a>
       </div>
     </div>
   </section>
@@ -66,9 +72,16 @@
           <li><strong><a href="nuestra_empresa.php">NUESTRA EMPRESA</a></strong></li>
           <li><strong><a href="servicios.php">SERVICIOS</a></strong></li>
           <li><strong><a href="objetivos.php"><strong>OBJETIVOS</strong></a></strong></li>
+          <?php
+          
+          If( !empty($isLoged) )
+        {
+          ?>  
           <li><strong><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a></strong></li>
-          <li><strong><a class="active" href="contacto.php">CONTACTO</a></strong></li>
-          <li><strong><a href="">PAGAR SERVICIO AQUÍ</a></strong></li><br>
+          <?php 
+        }
+        ?>          <li><strong><a class="active" href="contacto.php">CONTACTO</a></strong></li>
+          <li><strong><a href="metodos_de_pago.php">METODOS DE PAGO</a></strong></li><br>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -115,7 +128,7 @@
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
               <h3>&nbsp; &nbsp;Teléfono</h3>
-              <p><a href="tel:+56 9 5169 9440">&nbsp; &nbsp; +56 9 5169 9440</a></p>
+              <p><a href="tel:+56 9 5169 9440">&nbsp; &nbsp; +56 9 5169 9440 - (+56) 2 2904 1494</a></p>
             </div>
           </div>
 
@@ -123,7 +136,7 @@
 
         <div class="row">
 
-          <div class="col-lg-6 "><a href="https://www.google.com/maps/place/El+Esfuerzo+24,+Padre+Hurtado,+Regi%C3%B3n+Metropolitana/@-33.5557475,-70.8000958,17z/data=!3m1!4b1!4m5!3m4!1s0x9662dd77d86ef397:0x393864b2833d9b79!8m2!3d-33.5557475!4d-70.7979071" target="new"><img src="assets/img/mapa.jpg" width="612" height="318" alt=""/></a> </div>
+          <div class="col-lg-6 "><a href="https://www.google.com/maps/place/DZF+CERTIFICA/@-33.5564308,-70.7973404,17z/data=!4m5!3m4!1s0x9662dd4835891a6f:0xf920291900105d8d!8m2!3d-33.5563823!4d-70.7973921?hl=es" target="new"> &nbsp;    &nbsp;   &nbsp;  <img src="assets/img/mapa.jpg" width="486" height="318" alt=""/></a></div>
 
           <div class="col-lg-6">
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
@@ -186,27 +199,19 @@
               
             </ul>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              El Esfuerzo 24, Padre Hurtado, <br>
-              Región Metropolitana, Chile.&nbsp; <br><br>
-              <strong>Phone:</strong> +56 2 2904 1494<br>
-              <strong>Email:</strong> &nbsp;<a href="mailto:comercial@dzfcertifica.cl">comercial@dzfcertifica.cl</a><br>
-            </p>
-
+            <h4>ContactO</h4>
+            <p> El Esfuerzo 24, Padre Hurtado, <br>
+              Región Metropolitana <br>
+              <br>
+              <strong>Teléfono: </strong>(+56) 2 2904 1494 <br>
+              <strong>Celular:</strong> &nbsp;(+56) 9 5169 9440<br>
+              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i> </p>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Nuestra Empresa</h3>
             <p>Es ser una empresa de servicios en la industria, caracterizada por sus buenas prácticas, profesionalismo y especialización aportando soluciones concretas, basado en los compromisos y los requisitos exigidos por nuestros clientes</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+           
             </div>
           </div>
 

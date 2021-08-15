@@ -1,6 +1,10 @@
 <?php
        require_once 'admin/class/sesion.class.php';
        session_start();
+
+       $sesion = new sesion();
+       $isLoged = $sesion->getSession('ID_EMPRESA');      
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +13,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DFZ Certifica</title>
+  <title>DZF Certifica</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -31,12 +35,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Eterna - v4.3.0
-  * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
 <script type="text/javascript">
 function MM_openBrWindow(theURL,winName,features) { //v2.0
   window.open(theURL,winName,features);
@@ -45,57 +44,66 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 </head>
 
 <body>
+<br>
+<!-- ======= Header ======= -->
+<header id="header" class="d-flex align-items-center">
+  <div class="container d-flex justify-content-between align-items-center">
 
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <p><i class="bi bi-envelope d-flex align-items-center"><a href="mailto:comercial@dzcertifica.cl">comercial@dzfcertifica.cl</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>
-          +56 2 2904 1494</span></i>
-        </p>
-        <?php
+      <div>
+        <h1>&nbsp;</h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
 
-        $sesion = new sesion();
-        If( $sesion->getSession('ID_EMPRESA')=="" )
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active" href="index.php"><strong>INICIO</strong></a></li>
+          <li><strong><a href="nuestra_empresa.php">NUESTRA EMPRESA</a></strong></li>
+          <li><strong><a href="servicios.php">SERVICIOS</a></strong></li>
+          <li><strong><a href="objetivos.php">OBJETIVOS</a></strong></li>
+          <?php
+
+        If( !empty($isLoged))
         {
-        ?>  
-
-            <table width="321" height="59" border="0">
-              <tbody>
-                <tr>
-                  <td width="315" height="53" valign="top"><a href="" class="btn-get-started animate__animated animate__fadeInUp">&nbsp;
-                    </a>
-
-                  <button type="button" class="align-bottom"  data-bs-toggle="modal" data-bs-target="#modalForm">
-                    Ingreso de clientes
-                  </button>
-
-                </td>
-                </tr>
-              </tbody>
-            </table>
-        <?php 
-        } else{
-          echo 'Logeado';
+          ?>  
+          <li><strong><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a></strong></li>
+          <?php 
         }
         ?>
+          
 
-        <p>&nbsp;</p>
-      </div>
-      <a href="" class="btn-get-started animate__animated animate__fadeInUp">
-       &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      </form>
-      </a>
-      <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-    </div><br>
-    <!-- Modal -->
-    <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <li><strong><a href="contacto.php">CONTACTO</a></strong></li>
+          <li><strong><a href="metodos_de_pago.php">METODOS DE PAGO</a></strong></li><br>
+  <?php
+
+        If( empty($isLoged) )
+        {
+        ?>           
+	<li>&nbsp;&nbsp;&nbsp;&nbsp;<strong><button type="button" class="btn btn-primary btn-sm btn-danger"  data-bs-toggle="modal" data-bs-target="#modalForm">Ingreso de clientes</button></li>
+	<?php 
+        }
+        ?>
+	<br>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <?php
+
+        If( !empty($isLoged))
+        {
+          echo "<p class='fs-6'>";
+	        echo $sesion->getSession('EMPRESA');
+          echo "</p>";  
+          }
+          ?>
+    
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -128,45 +136,6 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
     <!-- Fin Modal -->
 
 
-
-  </section>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-between align-items-center">
-
-      <div>
-        <h1><a href="index.php"><img src="assets/img/header-logo-custom1.png" width="250" height="70" alt=""/></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="active" href="index.php"><strong>INICIO</strong></a></li>
-          <li><strong><a href="nuestra_empresa.php">NUESTRA EMPRESA</a></strong></li>
-          <li><strong><a href="servicios.php">SERVICIOS</a></strong></li>
-          <li><strong><a href="objetivos.php">OBJETIVOS</a></strong></li>
-          
-          <?php
-          $sesion = new sesion();
-          If( $sesion->getSession('ID_EMPRESA')!="" )
-          {
-          ?>  
-            <li><strong><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a></strong></li>
-          <?php
-          }
-          ?>
-          <li><strong><a href="contacto.php">CONTACTO</a></strong></li>
-          <li><strong><a href="">PAGAR SERVICIO AQUÍ</a></strong></li><br>
-
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
@@ -180,7 +149,8 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
           <div class="carousel-item active" style="background: url(assets/img/slide/slide-1.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">DZF <span>CERTIFICA</span></h2>
+                <h2 class="animate__animated animate__fadeInDown">&nbsp;         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
                 <p class="animate__animated animate__fadeInUp">Es una compañía nacional que entrega servicios de asesoría, ensayos no destructivos, inspección integral de plantas industriales y certificación de equipos móviles.</strong></p>
                 <a href="nuestra_empresa.php" class="btn-get-started animate__animated animate__fadeInUp">Ver más</a>
               </div>
@@ -191,7 +161,8 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
           <div class="carousel-item" style="background: url(assets/img/slide/slide-2.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated fanimate__adeInDown">DZF <span>CERTIFICA</span></h2>
+                <h2 class="animate__animated animate__fadeInDown">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
                 <p class="animate__animated animate__fadeInUp"> Especialistas en conocimientos normativos regulatorio en Chile.Con soluciones para asegurar los activos de sus clientes.</p>
                 <a href="objetivos.php" class="btn-get-started animate__animated animate__fadeInUp">Ver más</a>
               </div>
@@ -202,13 +173,24 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
           <div class="carousel-item" style="background: url(assets/img/slide/slide-3.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">DZF <span>CERTIFICA</span></h2>
+               <h2 class="animate__animated animate__fadeInDown">&nbsp;         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
                 <p class="animate__animated animate__fadeInUp"> A través de un staff de profesionales altamente capacitados, con experiencia en proyectos de envergadura nacional como internacional.</p>
                 <a href="servicios.php" class="btn-get-started animate__animated animate__fadeInUp">Ver más</a>
               </div>
             </div>
           </div>
-
+          <!-- Slide 4 -->
+          <div class="carousel-item" style="background: url(assets/img/slide/slide-4.jpg)">
+            <div class="carousel-container">
+              <div class="carousel-content">
+               <h2 class="animate__animated animate__fadeInDown">&nbsp;         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
+                <p class="animate__animated animate__fadeInUp"> El éxito o fracaso de las empresas dependen en gran parte de su capacidad para identificar los factores que son importantes para los clientes y para vigilar que la empresa funcione de manera competitiva. </p>
+                <a href="servicios.php" class="btn-get-started animate__animated animate__fadeInUp">Ver más</a>
+              </div>
+            </div>
+          </div>
         </div>
 
         <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
@@ -272,23 +254,28 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
             <img src="assets/img/about.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <h3>ENSAYOS NO DESTRUCTIVO.</h3>
-            <p class="fst-italic">
-              Los ensayos no destructivos (END) corresponden a aquellos ensayos que no alteran la forma ni las propiedades de un equipo u objeto. No producen ningún tipo de daño en él . Este tipo de ensayos son el respaldo para el estudio de las propiedades físicas, químicas o mecánicas de los materiales para asegurar la confiabilidad de un equipo u objeto.
-            </p>
+            <h3>CALIDAD EN SERVICIO.</h3>
+            <p>La calidad es uno de los requisitos fundamentales para garantizar  el éxito en su negocio, crea fidelidad del cliente y asegura ventajas  competitivas en la industria.<br>
+              DZF Certifica, ofrece una sólida vinculación, compromiso y satisfacción  de calidad a través de altos estándares nacionales e internacionales de la  industria y sus procesos de certificación.              </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> <strong>Servicio de Ensayos No Destructivos:</strong></li>
-              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;Inspección Visual<br>
-              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;Control Dimensional<br>
-              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;Líquidos Penetrantes<br>
-              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;Partículas Magnéticas <br>
-              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;Ultrasonido Defectos Materiales y Soldaduras<br>
-              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;Ultrasonido Medición de Espesores en acero <br>
-              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;Medición de espesores pintura<br>
-              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;Evaluación de esquemas y sistemas de protección intumescente. <br>
-              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;Holiday Detector <br>
-              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;Dureza Barcol </li>
-              <a href="servicios.php" class="btn-get-started animate__animated animate__fadeInUp">Ver más</a>
+              <li><i class="bi bi-check-circle"></i> <strong>SERVICIOS</strong></li>
+              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;ENSAYOS NO DESTRUCTIVOS <br>
+              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;INSPECCIÓN DE EQUIPOS MÓVILES DE IZAJE<br>
+              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;ASESORÍA DE REGULARIZACIÓN EN ESTANQUES SEC/SEREMI<br>
+              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;CERTIFICACIÓN DE ESTANQUES ISOTANQUE, API 653, UL58, BS2594, D.O.T.<br>
+              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;INSPECCIÓN INTEGRAL DE PLANTAS INDUSTRIALES DECRETO SUPREMO<br>
+              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;CALIFICACIÓN DE SOLDADORES Y PROCEDIMIENTOS<br>
+              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;CERTIFICACIÓN DE INSTRUMENTOS DE INSPECCIÓN<br>
+              <li><img src="assets/img/bullet.jpg" alt=""/>&nbsp;CAPACITACIONES <br>
+              <li><a href="servicios.php" class="btn-get-started animate__animated animate__fadeInUp">Ver más</a><br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+              
+              <a href="servicios.php" class="btn-get-started animate__animated animate__fadeInUp"></a>
 
             </ul>
 </div>
@@ -306,7 +293,9 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
         <div class="section-title">
           <h2>&nbsp; Clientes</h2>
           <p>Numerosos clientes ya confían en nosotros. </p>
-          <p>Somos conscientes de la particularidad de cada proyecto, por lo que nos ajustamos a las necesidades de cada cliente y hacemos nuestros sus objetivos.</p>
+          <p>Somos conscientes de la particularidad de cada proyecto, por lo que nos ajustamos a las necesidades de cada cliente y hacemos nuestros sus objetivos.<br>
+            <br>
+          </p>
         </div>
 
         <div class="clients-slider swiper-container">
@@ -316,16 +305,39 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
             <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-9.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-10.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="assets/img/clients/client-11.png" class="img-fluid" alt=""></div>
-			 <div class="swiper-slide"><img src="assets/img/clients/client-12.png" class="img-fluid" alt=""></div>
-
-          </div>
+            <div class="swiper-slide"><img src="assets/img/clients/client-15.png" class="img-fluid" alt=""></div>
+		 </div>
           <div class="swiper-pagination"></div>
+        </div><br>
+<br>
+<br>
+<br>
+
+        <div class="container">
+          <div class="section-title">
+            <h2>&nbsp; Alianzas</h2>
+            <p><br>
+            En la industria de la certificación e inspección no se puede ser participe de todos los procesos, por lo que DZF CERTIFICA nos aliamos con otras empresas que lideran el mercado, para si ofrecer un servicio de calidad garantizada en el menor tiempo posible. </p>
+          </div>
+          <div class="clients-slider swiper-container">
+            <div class="swiper-wrapper align-items-center">
+              <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-12.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-13.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-14.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-12.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-13.png" class="img-fluid" alt=""></div>
+              <div class="swiper-slide"><img src="assets/img/clients/client-14.png" class="img-fluid" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
 
       </div>
@@ -357,32 +369,24 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
             <h4></h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">OBJETIVOS</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">BIBLIOTECA DE CLIENTES</a></li>
+	            <li><i class="bx bx-chevron-right"></i> <a href="#">BIBLIOTECA DE CLIENTES</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">CONTACTO </a></li>
               
             </ul>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              El Esfuerzo 24, Padre Hurtado, <br>
-              Región Metropolitana, Chile.&nbsp; <br><br>
-              <strong>Phone:</strong> +56 2 2904 1494<br>
-              <strong>Email:</strong> &nbsp;<a href="mailto:comercial@dzfcertifica.cl">comercial@dzfcertifica.cl</a><br>
-            </p>
-
+            <h4>ContactO</h4>
+            <p> El Esfuerzo 24, Padre Hurtado, <br>
+              Región Metropolitana <br>
+              <br>
+              <strong>Teléfono: </strong>(+56) 2 2904 1494 <br>
+              <strong>Celular:</strong> &nbsp;(+56) 9 5169 9440<br>
+              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i> </p>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Nuestra Empresa</h3>
             <p>Es ser una empresa de servicios en la industria, caracterizada por sus buenas prácticas, profesionalismo y especialización aportando soluciones concretas, basado en los compromisos y los requisitos exigidos por nuestros clientes</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            
             </div>
           </div>
 
@@ -417,13 +421,9 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
-
-
 
 </body>
 

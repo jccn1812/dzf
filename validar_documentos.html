@@ -70,8 +70,15 @@
           <li><strong><a href="servicios.html">SERVICIOS</a></strong></li>
           <li><strong><a class="active" href="validar_documentos.html">VALIDAR DOCUMENTOS</a></strong></li>
           <li><strong><a href="objetivos.html"><strong>OBJETIVOS</strong></a></strong></li>
-          <li><strong><a href="biblioteca_de_clientes.html">BIBLIOTECA DE CLIENTES</a></strong></li>
-          <li><strong><a href="contacto.html">CONTACTO</a></strong></li>
+          <?php
+          
+          If( !empty($isLoged) )
+          {
+            ?>  
+            <li><strong><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a></strong></li>
+            <?php 
+          }
+          ?>          <li><strong><a href="contacto.html">CONTACTO</a></strong></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

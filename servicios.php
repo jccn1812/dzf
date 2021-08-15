@@ -1,3 +1,14 @@
+<?php
+       require_once 'admin/class/sesion.class.php';
+       session_start();
+
+       $sesion = new sesion();
+       $isLoged = $sesion->getSession('ID_EMPRESA');
+
+       echo "Vacio " . empty($isLoged);
+      
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +16,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>DZ Certifica</title>
+  <title>DZF Certifica</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -27,12 +38,7 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Eterna - v4.3.0
-  * Template URL: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+ 
 </head>
 
 <body>
@@ -42,13 +48,13 @@
     <div class="container d-flex justify-content-center justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:comercial@dzcertifica.cl">comercial@dzfcertifica.cl</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+56 2 2904 1494</span></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>(+56) 2 2904 1494 - (+56) 9 5169 9440</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="#" class=""><i class=""></i></a>
+        <a href="#" class=""><i class=""></i></a>
+        <a href="#" class=""><i class=""></i></a>
+        <a href="#" class=""><i class=""></i></i></a>
       </div>
     </div>
   </section>
@@ -69,9 +75,16 @@
           <li><strong><a href="nuestra_empresa.php">NUESTRA EMPRESA</a></strong></li>
           <li><strong><a class="active" href="servicios.php">SERVICIOS</a></strong></li>
            <li><strong><a href="objetivos.php"><strong>OBJETIVOS</strong></a></strong></li>
+           <?php
+          
+           If( !empty($isLoged) )
+        {
+          ?>  
           <li><strong><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a></strong></li>
-          <li><strong><a href="contacto.php">CONTACTO</a></strong></li>
-          <li><strong><a href="">PAGAR SERVICIO AQUÍ</a></strong></li><br>
+          <?php 
+        }
+        ?>          <li><strong><a href="contacto.php">CONTACTO</a></strong></li>
+          <li><strong><a href="metodos_de_pago.php">METODOS DE PAGO</a></strong></li><br>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -120,7 +133,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                   <div class="member"> <img src="assets/img/team/team-3.jpg" alt="">
-                    <h4>Asesoria de Regularizacion en estanques SEC/SEREMI</h4>
+                    <h4>Asesoría  de Regularización en estanques SEC/SEREMI</h4>
                     <span>• Auditoria documental <br>
                     • Capacitación normativa <br>
                     • Levantar no conformidades</span>
@@ -149,8 +162,8 @@
             <div class="row">
               <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="member"> <img src="assets/img/team/team-1.jpg" alt="">
-                  <h4>Certificación y inspección de equipos de izaje</h4>
-                  <span>• Certificación de camionetas para la minería según DS 132 <br>
+                  <h4>Certificación e inspección de equipos de izaje</h4>
+                  <span>• Certificación  para la minería según DS 132 <br>
 • Certificado técnico <br>
 • Certificación de camiones izaje<br>
                   • Certificación de ganchos<br>
@@ -184,7 +197,7 @@
               </div>
               <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="member"> <img src="assets/img/team/team-7.jpg" alt="">
-                  <h4>Sub-Contratación de Organismos Acreditados Combutibles</h4>
+                  <h4>Sub-Contratación  de Organismos Acreditados Combustibles</h4>
                   <span>• El objetivo es entregar información trazable al cliente en un corto tiempo</span>                </div>
               </div>
             </div>
@@ -233,27 +246,20 @@
               
             </ul>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
-            <p>
-              El Esfuerzo 24, Padre Hurtado, <br>
-              Región Metropolitana <br><br>
-              <strong>Phone:</strong> +56 2 2904 1494<br>
-              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i>
-            </p>
-
+            <h4>ContactO</h4>
+            <p> El Esfuerzo 24, Padre Hurtado, <br>
+              Región Metropolitana <br>
+              <br>
+              <strong>Teléfono: </strong>(+56) 2 2904 1494 <br>
+              <strong>Celular:</strong> &nbsp;(+56) 9 5169 9440<br>
+              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i> </p>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Nuestra Empresa</h3>
             <p>Es ser una empresa de servicios en la industria, caracterizada por sus buenas prácticas, profesionalismo y especialización aportando soluciones concretas, basado en los compromisos y los requisitos exigidos por nuestros clientes</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+           
+           
             </div>
           </div>
 
