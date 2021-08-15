@@ -119,7 +119,16 @@
 
   });
 
+  $('#btnLogout').click(function()
+  {
+     $.post("logout.php",{},function(data){ 
+    	})
+     $("#frmLogout").submit(); 
+     return;
 
+
+  });
+  
 
 
   /**

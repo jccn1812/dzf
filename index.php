@@ -3,7 +3,9 @@
        session_start();
 
        $sesion = new sesion();
-       $isLoged = $sesion->getSession('ID_EMPRESA');      
+       $isLoged = $sesion->getSession('ID_EMPRESA');   
+       
+       echo 'Logeado ' . $isLoged;
 
 ?>
 <!DOCTYPE html>
@@ -88,18 +90,23 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <?php
-
-        If( !empty($isLoged))
-        {
-          echo "<p class='fs-6'>";
-	        echo $sesion->getSession('EMPRESA');
-          echo "</p>";  
-          }
-          ?>
-    
+     
 
     </div>
+    <?php
+        
+        If( !empty($isLoged))
+        {
+          echo "<div class='d-flex p-2 bd-highlight'><p class='fs-6'>";
+	        echo $sesion->getSession('EMPRESA');
+          echo "</p>";
+          echo "<form id='frmLogout'>";
+          echo "<button type='button' id='btnLogout' class='btn btn-primary btn-sm btn-danger'>Cerrar sesión</button>";
+          echo "</form>";
+          echo "</div>";
+        }
+          ?>
+    
   </header><!-- End Header -->
 
   <!-- Modal -->
