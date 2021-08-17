@@ -65,7 +65,7 @@ $("#volverAtras").click(function(){
                                  })
 
 $("#volverFormulario").click(function(){                                 
-                                 f.accion.value ="3";
+                                 f.accion.value ="";
                                  f.submit();                                                               
                                  })
 
@@ -73,7 +73,7 @@ $("#volverFormulario").click(function(){
 
 
 $("#volverPanel").click(function(){                              
-                                 f.action="mentenedorEmpresas.php";
+                                 f.action="mantenedorInformes.php";
                                  f.submit();
                                  })
 
@@ -101,8 +101,8 @@ $(".btnEdit").click(function(x){
 $(".btnElim").click(function(x){
                                 if(confirm("\u00BFEsta seguro que desea eliminar este Informe"))
                                   {
-                                   f.IdEmpresa.value=this.value;                            
-				                   f.accion.value="5";
+                                   f.IdInforme.value=this.value;                            
+				                           f.accion.value="5";
                                    f.action="mantenedorInformes.php";
                                    f.submit();
                                   }                                                                

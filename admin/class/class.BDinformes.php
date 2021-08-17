@@ -67,9 +67,8 @@ class informes extends Database
   
   	$connection = Database::Connect ();
   
-  	$this->query = "call sp_ContableJEE_delete_eliminaEmpresaPorId('" . $this->IdEmpresa . "')";
-  
-  	try {
+  	$this->query = "call sp_EtereusCMS_delete_eliminaInformePorId('" . $this->IdInforme . "')";
+    try {
   		Database::NonQuery ( $this->query, $connection );
   		if (mysqli_errno ($connection) != 0) // Controla el error al borrar en cascada
   			throw new Exception ( 'No es posible eliminar la empresa indicada. Tiene datos relacionados.' );

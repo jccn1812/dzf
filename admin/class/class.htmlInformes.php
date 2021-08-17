@@ -33,8 +33,9 @@ class Htmlinformes extends classHtml implements funcionalidad {
 	private $laaccion;
 
 	private $listaPermisos;
-
+	private $sello;
    
+	
 	public function setlaAccion($laaccion) {
 		$this->laaccion = $laaccion;
 	}
@@ -81,11 +82,14 @@ class Htmlinformes extends classHtml implements funcionalidad {
 	
 
 	public function setListaPermisos($listaPermisos){
-	    //$this->listaPermisos = substr($listaPermisos,1,strlen($listaPermisos)-1);
 		$this->listaPermisos = trim($listaPermisos);
 	}
 	
-	
+	public function setSello($sello) {
+		$this->sello = $sello;
+	}
+
+
   public function getMantenedor($accion) {
   
 
@@ -95,6 +99,7 @@ class Htmlinformes extends classHtml implements funcionalidad {
 				$this->topTitulo ( $accion );
 				$this->openForm ( $accion );
 				$this->agregar();
+				$this->recolectaRegistros ();
 				$this->bodyAdministrador ();
 				$this->closeForm ();
 				$this->volverAtras ();
@@ -123,6 +128,7 @@ class Htmlinformes extends classHtml implements funcionalidad {
 			case "3" : // Edicion. Formulario de cuenta.
 				$this->headerForm ($accion);
 				$this->topTitulo ( $accion );
+				$this->cargaBase();
 				$this->openForm ( $accion );
 				$this->formulario ( $accion );
 				$this->closeForm ();
@@ -141,30 +147,21 @@ class Htmlinformes extends classHtml implements funcionalidad {
 				if ($this->error != "")
 					$this->volverFormulario (); 
 				else
-					$this->volverAtras ();
+					$this->volverAtrasEmpresa ();
 				$this->footer ();
 			break;
 			case "5" :
 				$this->Elimina ();
-				if ($this->error != "") {
-					$this->header ();
-					$this->topTitulo ( $accion );
-					$this->openForm ( $accion );
-					$this->detallaError ();
-					$this->volverAtras ();
-					$this->closeForm ();
-					$this->footer ();
-				} else {
 					$this->header ();
 					$this->topTitulo ( $accion );
 					$this->openForm ( $accion );
 					$this->agregar();
+					$this->recolectaRegistrosEliminacion ();
 					$this->bodyAdministrador ();
 					$this->closeForm ();
 					$this->volverAtras ();
 					$this->footer ();
 
-				}
 					
 			break;
 
@@ -254,7 +251,7 @@ class Htmlinformes extends classHtml implements funcionalidad {
 	}
 
 	public function bodyAdministrador() {
-		$this->recolectaRegistros ();
+		
 
 		echo '
      		 <div class="estilo" id="contenedor_item">
@@ -304,7 +301,15 @@ class Htmlinformes extends classHtml implements funcionalidad {
 
 
 	public function recolectaRegistros() {
+		
 		include_once ("class.BDInformes.php");
+		$informes = new informes ( );
+		$informes->setIdEmpresa($this->IdEmpresa);
+		$this->arrInformes = $informes->listaInformes ();
+	}
+
+	public function recolectaRegistrosEliminacion() {
+		
 		$informes = new informes ( );
 		$informes->setIdEmpresa($this->IdEmpresa);
 		$this->arrInformes = $informes->listaInformes ();
@@ -342,6 +347,12 @@ class Htmlinformes extends classHtml implements funcionalidad {
                   <td align="right" class="nombrecampo">Orden de trabajo (OT) : </td>
                   <td colspan="3" align="left"><label>
                     <input name="ot" type="text" class="txtcampo" maxlength="10" size="10" id="ot" value="' . $this->ot . '" />
+                  </label></td>
+                </tr>
+				<tr>
+                  <td align="right" class="nombrecampo">Sello : </td>
+                  <td colspan="3" align="left"><label>
+                    <input name="sello" type="text" class="txtcampo" maxlength="12" size="12" id="sello" value="' . $this->sello . '" />
                   </label></td>
                 </tr>
                 <tr>
@@ -444,7 +455,8 @@ class Htmlinformes extends classHtml implements funcionalidad {
 		$subquery .= $this->ChequeaNuloEx ( muestraFechaDDMMAAAAconSlash($this->fechaEmision), "N" ) . ",";
 		$subquery .= $this->ChequeaNuloEx ( muestraFechaDDMMAAAAconSlash($this->fechaVencimiento), "N" ) . ",";
 		$subquery .= $this->ChequeaNuloEx ( $this->IdUsuarioDirector, "N" ) . ",";
-		$subquery .= $this->ChequeaNuloEx ( $this->IdUsuarioInspector, "N" ) ;
+		$subquery .= $this->ChequeaNuloEx ( $this->IdUsuarioInspector, "N" ) . ",";
+		$subquery .= $this->ChequeaNuloEx ( $this->sello, "N" ) ;
 		
 					
 		try {
@@ -452,6 +464,8 @@ class Htmlinformes extends classHtml implements funcionalidad {
 			$this->query = "call sp_EtereusCMS_insert_ingresaInforme(" . $subquery . ")";
 			$result = Database::Reader ( $this->query, $connection );
          
+
+
 			if (mysqli_errno ($connection) == 1062) // Controla duplicidad de campo clave
 				throw new Exception ( 'No fue posible la creaci&oacute;n. El nombre de inicio de sesi&oacute;n debe ser &uacute;nico y ya existe para otro usuario.' );
 		} catch ( Exception $e ) {
@@ -459,8 +473,9 @@ class Htmlinformes extends classHtml implements funcionalidad {
 		}
 
 	   if (mysqli_errno ($connection) == 0){
-	        //$rowDatosCuenta = mysqli_fetch_object( $result );
-	        //$this->IdCuenta = $rowDatosCuenta->UltimoId;
+	        $rowDatosCuenta = mysqli_fetch_object( $result );
+	        $this->IdInforme = $rowDatosCuenta->UltimoId;
+
 
 		}
 
@@ -474,14 +489,22 @@ class Htmlinformes extends classHtml implements funcionalidad {
 
 	public function Elimina() {
 
-		include_once ("class.BDempresas.php");
 
-		$objEmpresa = new empresas ( );
-		$objEmpresa->setIdEmpresa ( $this->IdEmpresa );
-		$DatosEmpresa = $objEmpresa->Elimina ();
+		include_once ("class.BDinformes.php");
+		$objInforme = new informes ( );
+		$objInforme->setIdInforme ( $this->IdInforme );
+		$DatosInforme = $objInforme->Elimina ();
+
 		return;
 
 	}
+
+	function cargaBase() {
+		$this->IdInforme = null;
+		include_once ("class.BDinformes.php");
+
+	}
+
 
 	function cargaObjetos() {
 
@@ -502,6 +525,7 @@ class Htmlinformes extends classHtml implements funcionalidad {
 		$this->fechaVencimiento     = muestraFechaDDMMAAAA($rowDatosInformes->fechaVencimiento);
 		$this->IdUsuarioDirector    = $rowDatosInformes->IdUsuarioDirector;
 		$this->IdUsuarioInspector   = $rowDatosInformes->IdUsuarioInspector;
+		$this->sello				= $rowDatosInformes->sello;
 		
 		if (mysqli_errno ($connection) != 0) {
 			throw new Exception ( 'No fue posible la creaci&oacute;n. El nombre de inicio de sesi&oacute;n debe ser &uacute;nico y ya existe para otro usuario.' );
@@ -516,9 +540,6 @@ class Htmlinformes extends classHtml implements funcionalidad {
 	 $this->EliminaCategorias();
 
 	$subquery = "";
-
-	echo 'Los permisos para el calculo '.$this->listaPermisos;
-	
 	$cats = preg_split("/,/", $this->listaPermisos);
 
 	foreach($cats as $categoria){
@@ -592,6 +613,17 @@ class Htmlinformes extends classHtml implements funcionalidad {
 	    }
 	    echo "</table>";
 	}
+
+	public function volverAtrasEmpresa()
+   {
+   echo ' <div class="estilo" id="contenedor_item">
+          <div align="center">
+            <label>
+            <img id="volverPanel" src="../images/volver.gif" width="119" height="30" border="0"/>
+          </div>
+        </div>';
+   }
+
 	
 	
 }

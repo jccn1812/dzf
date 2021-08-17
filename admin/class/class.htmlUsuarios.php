@@ -484,7 +484,6 @@ class Htmlusuarios extends classHtml implements funcionalidad {
 		$subquery .= $this->ChequeaNulo ( $this->estaactivo, "S" ) . ",";
 		$subquery .= $this->ChequeaNulo ( $this->profesion, "N" );
 
-		echo $subquery;
 
 		try {
 			
@@ -645,4 +644,5 @@ class Htmlusuarios extends classHtml implements funcionalidad {
 	    }
 	    echo "</table>";
 	}
+ 
 }

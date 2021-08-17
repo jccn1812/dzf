@@ -96,7 +96,7 @@ class empresas extends Database
   	$connection = Database::Connect ();
   
   	$this->query = "call sp_ContableJEE_delete_eliminaEmpresaPorId('" . $this->IdEmpresa . "')";
-    echo $this->query;
+    
   
   	try {
   		Database::NonQuery ( $this->query, $connection );

@@ -416,12 +416,6 @@ class Htmlempresas extends classHtml implements funcionalidad {
 			  <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>';
-	if($laaccion == '2')
-	{		  
-     echo '
-              <td><input type="button" name="bntCert" class="Boton" id="bntCert" value="Ver Certificados" /></td>
-     ';
-	}
 	echo '
 			  </tr>
           </table>

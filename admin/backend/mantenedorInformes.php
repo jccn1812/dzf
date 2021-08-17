@@ -16,6 +16,7 @@ $fechaEmision       = $_POST ["fechaEmision"];
 $fechaVencimiento   = $_POST ["fechaVencimiento"];
 $IdUsuarioDirector  = $_POST ["cmbDirector"];
 $IdUsuarioInspector = $_POST ["cmbInspector"];
+$sello              = $_POST ["sello"];
 
 $permisos           = $_POST ["perm"];
 
@@ -46,6 +47,7 @@ $mantenedor->setIdUsuarioDirector ( $IdUsuarioDirector );
 $mantenedor->setIdUsuarioInspector ( $IdUsuarioInspector );
 
 $mantenedor->setListaPermisos ( $permisos );
+$mantenedor->setSello ( $sello );
 
 $mantenedor->getMantenedor ( $accion );
 

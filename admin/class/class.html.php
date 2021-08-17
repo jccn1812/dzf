@@ -70,7 +70,7 @@ class classHtml {
    {
    echo ' <div class="estilo" id="contenedor_item">
            <div align="center">
-            <img id="volverPanel" src="../images/volverpanel.jpg" width="119" height="30" border="0"/>
+            <img id="volverPanel" src="../images/volverpanel.gif" width="119" height="30" border="0"/>
           </div>
         </div>
         ';

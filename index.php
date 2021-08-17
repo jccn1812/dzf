@@ -5,8 +5,6 @@
        $sesion = new sesion();
        $isLoged = $sesion->getSession('ID_EMPRESA');   
        
-       echo 'Logeado ' . $isLoged;
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -97,11 +95,11 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
         
         If( !empty($isLoged))
         {
-          echo "<div class='d-flex p-2 bd-highlight'><p class='fs-6'>";
+          echo "<div class='d-flex p-2 bd-highlight'><p class='smalltext'>";
 	        echo $sesion->getSession('EMPRESA');
           echo "</p>";
           echo "<form id='frmLogout'>";
-          echo "<button type='button' id='btnLogout' class='btn btn-primary btn-sm btn-danger'>Cerrar sesión</button>";
+          echo "<button type='button' id='btnLogout' class='close'>Cerrar sesión</button>";
           echo "</form>";
           echo "</div>";
         }
