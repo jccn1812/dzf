@@ -131,7 +131,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                         </div>-->
                         <div class="modal-footer d-block">
                             <p class="float-start">Si lo desea <a href="#">Reinicie su password</a>&nbsp;aqu&iacute;</p>
-                            <button type="button" id="btnSubmitForm" class="btn btn-warning float-end">Ingresar</button>
+                            <button type="button" id="btnSubmitForm" class="btn btn-danger float-end">Ingresar</button>
                         </div>
                     </form>
                 </div>

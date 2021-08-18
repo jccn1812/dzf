@@ -5,7 +5,6 @@
        $sesion = new sesion();
        $isLoged = $sesion->getSession('ID_EMPRESA');
 
-       echo "Vacio " . empty($isLoged);
       
 
 ?>

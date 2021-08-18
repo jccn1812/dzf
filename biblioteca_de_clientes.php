@@ -1,3 +1,39 @@
+<?php
+
+    include_once ("admin/class/class.BDInformes.php");
+		require_once ("admin/class/sesion.class.php");
+    
+    session_start();
+
+    $sesion = new sesion();
+    $IdEmpresa = $sesion->getSession('ID_EMPRESA');   
+
+    $informes = new informes ( );
+		$informes->setIdEmpresa($IdEmpresa);
+		$arrInformes = $informes->listaInformes ();
+
+    function muestraTipoInforme($comparador){
+
+      if($comparador == 1){
+        return "Informe de Inspecci&oacute;n";
+      }
+      else{
+        return "Informe de Capacitaci&oacute;n";
+      }
+    }
+        
+    function muestraFechaDDMMAAAA($lafecha){
+
+      $lafecha = strtotime($lafecha);
+      return  date('d/m/Y',$lafecha);
+      
+    }
+  
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -103,17 +139,51 @@
 </div>
            <!-- ======= Featured Section ======= -->
     <section id="featured" class="featured">
-<label for="email">Email:</label>
-      <input type="email" name="email" id="email">
-      <p>
-      <br>
-      </p><p>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password">
-        <input type="submit" name="submit" id="submit" value="Entrar">
-&nbsp;<br>
-      </p>
       <div class="container">
+
+
+      <table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered">
+      <thead>
+						<tr>
+							<th>Tipo</th>
+							<th>N&uacute;mero</th>
+							<th>OT</th>
+							<th>Sello</th>
+              <th>Fecha creaci&oacute;n</th>
+							<th>Fecha Vencimiento</th>
+              <th>Estado</th>
+              <th>Descripci&oacute;n</th>
+
+            </tr>
+					</thead>
+
+
+     <?php
+        $x=0;
+        while ( $rowInforme = mysqli_fetch_array ( $arrInformes ) ) {
+        $x ++;
+        echo '<tr class="gradeA">';
+        printf ( '          <td>%s</td>', muestraTipoInforme($rowInforme ["IdTipoInforme"] ));
+        printf ( '          <td>%s</td>', $rowInforme ["numeroInforme"] );
+        printf ( '          <td>%s</td>', $rowInforme ["Ot"] );
+        printf ( '          <td>%s</td>', $rowInforme ["sello"] );
+        printf ( '          <td>%s</td>', muestraFechaDDMMAAAA($rowInforme ["fechaEmision"] ));
+        printf ( '          <td>%s</td>', muestraFechaDDMMAAAA($rowInforme ["fechaVencimiento"]) );      
+        printf ( '          <td>%s</td>', $rowInforme ["Estado"] );      
+        
+        
+        
+        printf ( '          <td>%s</td>', $rowInforme ["descripcion"]  );
+        
+
+      }
+
+      echo '  <tr></table>';
+    
+    ?>
+
+
+
 
          <div class="row">
           <div class="col-lg-4"> </div>
