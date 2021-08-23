@@ -397,26 +397,40 @@ class classHtml {
 	  
 	$selectInspeccion = "";
 	$selectCapacitacion = "";
+	$selectCertificacion = "";
 
 	if($comparador=="1") $selectInspeccion ="selected";
 	if($comparador=="2") $selectCapacitacion ="selected";
+	if($comparador=="3") $selectCertificacion ="selected";
 
 	echo '
 		<select id="cmbTipoInforme" name="cmbTipoInforme">
-			<option value="1" '.$selectInspeccion.'>Inspeccion</option>
-			<option value="2" '.$selectCapacitacion.'>Capacitacion</option>
+			<option value="1" '.$selectInspeccion.'>Inspecci&oacute;n</option>
+			<option value="2" '.$selectCapacitacion.'>Capacitaci&oacute;n</option>
+			<option value="3" '.$selectCertificacion.'>Certificaci&oacute;n</option>
 		</select>';
 }
 
- public function muestraTipoInforme($comparador){
+  
 
-	if($comparador == 1){
-		return "Informe de Inspecci&oacute;n";
+
+
+
+ public function muestraTipoInforme($comparador){
+	switch($comparador)
+	{
+		case 1:
+			return "Informe de Inspecci&oacute;n";
+			break;
+		case 2:	
+			return "Informe de Capacitaci&oacute;n";
+			break;
+		case 3:
+			return "Informe de Certificac&oacute;n";		
+			break;
 	}
-	else{
-		return "Informe de Capacitaci&oacute;n";
-	}
-}
+ }
+
 
 
   	function ChequeaNulo($valorConvertir,$esNumero)

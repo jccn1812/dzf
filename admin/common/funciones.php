@@ -359,30 +359,6 @@ function chequeaPerfil($argPerfil){
 	}
 
 	
-	function actualizaEncabezado($argQuery){
-		try {
-			$conexion = new mysqli(BDserver,BDuser,BDpassword,BDBase);
-	
-			if (mysqli_connect_errno()) {
-				throw new Exception("La conexion fallo<br />");
-			}
-	
-			else {
-				$resultado = $conexion->query("call sp_ContableJEE_ingresaVoucherEncabezado(". $argQuery .")");
-			    $row = $resultado->fetch_object();
-
-				return $row->UltimoId;
-				
-			}
-		}
-		catch (Exception $e) {
-			echo $e->getMessage() . mysqli_connect_errno(). "<br />" .mysqli_connect_error();
-		}
-		$conexion->close();
-	
-	
-	
-	}
 	
 	
 function muestraEstado($estatus,$baseMensaje){

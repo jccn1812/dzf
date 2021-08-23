@@ -24,6 +24,22 @@ class informes extends Database
   
   public $IdInforme;
   public $IdEmpresa;
+
+  public $IdTipoInforme;
+  public $numeroInforme;   
+  public $ot;              
+  public $sello;           
+  
+  public $IdEstado;       
+  public $fechaInicioVcto; 
+  public $fechaFinVcto;    
+
+  public $filasInforme; 
+  public $diasPorVencer;    
+
+  public $pagina;    
+  
+
   
 
   // Los sets para las propiedades
@@ -38,7 +54,55 @@ class informes extends Database
   	$this->IdEmpresa = $IdEmpresa;
   }
   
+  function setIdTipoInforme($IdTipoInforme)
+  {
+  	$this->IdTipoInforme = $IdTipoInforme;
+  }
+ 
+  function setNumeroInforme($numeroInforme)
+  {
+  	$this->numeroInforme = $numeroInforme;
+  }
+ 
+  function setOt($ot)
+  {
+  	$this->ot = $ot;
+  }
 
+  function setSello($sello)
+  {
+  	$this->sello = $sello;
+  }
+
+  function setIdEstado($idEstado)
+  {
+  	$this->idEstado = $idEstado;
+  }
+
+  function setFechaInicioVcto($fechaInicioVcto)
+  {
+  	$this->fechaInicioVcto = $fechaInicioVcto;
+  }
+
+  function setFechaFinVcto($fechaFinVcto)
+  {
+  	$this->fechaFinVcto = $fechaFinVcto;
+  }
+
+  function setFilasInforme($filasInforme)
+  {
+  	$this->filasInforme = $filasInforme;
+  }
+
+  function setDiasPorVencer($diasPorVencer)
+  {
+  	$this->diasPorVencer = $diasPorVencer;
+  }
+
+  function setPagina($pagina)
+  {
+  	$this->pagina = $pagina;
+  }
 
   public function datosInformePorId()
   {
@@ -94,7 +158,68 @@ class informes extends Database
     return $this->result;
  
  }
+
+ public function listaInformesPorCriterio()
+ {
+  $connection = Database::Connect();
+  $this->query =  "CALL sp_etereusCMS_select_listaInformesPorCriterio(
+                  ".$this->ChequeaNull ($this->numeroInforme,"S").",
+                  ".$this->ChequeaNull ($this->IdTipoInforme,"S").",
+                  ".$this->ChequeaNull ($this->ot,"S").",";
+  
+  if(empty($this->sello)){
+    $this->query = $this->query . "NULL,";
+  }                
+  else
+  {
+    $this->query = $this->query . "'" .$this->sello."'," ; 
+  }
+
+  $this->query = $this->query .$this->ChequeaNull ($this->IdEmpresa,"N").",";
+
+  if(empty($this->fechaInicioVcto)){
+    $this->query = $this->query . "NULL,";
+  }                
+  else
+  {
+    $this->query = $this->query . "'" .$this->fechaInicioVcto."'," ; 
+  }
+
+  if(empty($this->fechaFinVcto)){
+    $this->query = $this->query . "NULL,";
+  }                
+  else
+  {
+    $this->query = $this->query . "'" .$this->fechaFinVcto."'," ; 
+  }
+
+  $this->query = $this->query .$this->ChequeaNull ($this->IdEstado,"S").",
+                ".$this->ChequeaNull ($this->diasPorVencer,"N").",
+                ".$this->ChequeaNull ($this->filasInforme,"S").",
+                ".$this->ChequeaNull ($this->pagina,"N").")";
+  
+  echo $this->query;
+  
+  $this->result = Database::Reader($this->query,$connection);
+  Database::desconectar($connection);
+  return $this->result;
+ }
+    
  
+ function ChequeaNull($valorConvertir,$esNumero)
+ {
+  $valorDevolver = "";
+  if ($valorConvertir=="" )
+    {
+     $valorConvertir =  "NULL";
+    }
+ 
+
+ return $valorConvertir;
+
+
+ }
+
 
 
 }

@@ -1,26 +1,80 @@
 <?php
 
     include_once ("admin/class/class.BDInformes.php");
+    include_once ("admin/class/constantes.php");
 		require_once ("admin/class/sesion.class.php");
     
     session_start();
 
     $sesion = new sesion();
     $IdEmpresa = $sesion->getSession('ID_EMPRESA');   
+    $empresa   = $sesion->getSession('EMPRESA');
+    $rut       = $sesion->getSession('RUT');
+
+    $IdTipoInforme   = $_POST ["cmbTipoInforme"];
+    $numeroInforme   = $_POST ["numeroInforme"];
+    $ot              = $_POST ["ot"];
+    $sello           = $_POST ["sello"];
+    
+    $IdEstado        = $_POST ["cmbEstado"];
+    $fechaInicioVcto = $_POST ["fechaInicioVcto"];
+    $fechaFinVcto    = $_POST ["fechaFinVcto"];
+
+    
+
 
     $informes = new informes ( );
 		$informes->setIdEmpresa($IdEmpresa);
-		$arrInformes = $informes->listaInformes ();
+    $informes->setIdTipoInforme($IdTipoInforme);
+    $informes->setNumeroInforme($numeroInforme);
+    $informes->setOt($ot);
+    $informes->setSello($sello);
+    $informes->setIdEstado($IdEstado);
 
-    function muestraTipoInforme($comparador){
+    $informes->setFechaInicioVcto($fechaInicioVcto);
+    $informes->setFechaFinVcto($fechaFinVcto);
+    
+    $informes->setFilasInforme(consFilasPagina);
+    $informes->setDiasPorVencer(consDiasPorVencer);
+    $informes->setPagina(1);
 
-      if($comparador == 1){
-        return "Informe de Inspecci&oacute;n";
-      }
-      else{
-        return "Informe de Capacitaci&oacute;n";
+
+
+
+
+		$arrInformes = $informes->listaInformesPorCriterio ();
+
+    function muestraTipoInforme($tipoInforme){
+      switch($tipoInforme)
+      {
+        case 1:
+          return "Inspecci&oacute;n";
+          break;
+        case 2:	
+          return "Capacitaci&oacute;n";
+          break;
+        case 3:
+          return "Certificac&oacute;n";		
+          break;
       }
     }
+
+
+    function muestraEstado($estado){
+      switch($estado)
+      {
+        case 1:
+          return "Vigente";
+          break;
+        case 2:	
+          return "Vencido";
+          break;
+        case 3:
+          return "Por vencer";		
+          break;
+      }
+    }
+
         
     function muestraFechaDDMMAAAA($lafecha){
 
@@ -28,6 +82,45 @@
       return  date('d/m/Y',$lafecha);
       
     }
+
+    function creaComboTipoInformeBT($comparadorTipoInforme){
+	  
+      $selectInspeccion = "";
+      $selectCapacitacion = "";
+      $selectCertificacion = "";
+    
+      if($comparadorTipoInforme=="1") $selectInspeccion     = "selected";
+      if($comparadorTipoInforme=="2") $selectCapacitacion   = "selected";
+      if($comparadorTipoInforme=="3") $selectCertificacion  = "selected";
+    
+      echo '
+        <select id="cmbTipoInforme" name="cmbTipoInforme" class="form-select form-select-sm"" aria-label=".form-select-lg example">
+          <option value="">Seleccione</option>
+          <option value="1" '.$selectInspeccion.'>Inspecci&oacute;n</option>
+          <option value="2" '.$selectCapacitacion.'>Capacitaci&oacute;n</option>
+          <option value="3" '.$selectCertificacion.'>Certificaci&oacute;n</option>
+        </select>';
+     }
+    
+
+     function creaComboEstado($comparadorEstado){
+	  
+      $selectInspeccion = "";
+      $selectCapacitacion = "";
+      $selectCertificacion = "";
+    
+      if($comparadorEstado=="1") $selectVigente ="selected";
+      if($comparadorEstado=="2") $selectVencido ="selected";
+      if($comparadorEstado=="3") $selectPorVencer ="selected";
+    
+      echo '
+        <select id="cmbEstado" name="cmbEstado" class="form-select form-select-sm"" aria-label=".form-select-lg example">
+          <option value="">Seleccione</option>
+          <option value="1" '.$selectVigente.'>Vigente</option>
+          <option value="2" '.$selectVencido.'>Vencido</option>
+          <option value="3" '.$selectPorVencer.'>Por vencer</option>
+        </select>';
+     }
   
 
 
@@ -62,6 +155,8 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/datatables.css">
 
   <!-- =======================================================
   * Template Name: Eterna - v4.3.0
@@ -136,14 +231,47 @@
             <br>
           Biblioteca de Clientes</h2>
           <br>
-</div>
+      </div>
            <!-- ======= Featured Section ======= -->
     <section id="featured" class="featured">
       <div class="container">
-
-
-      <table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered">
+  
+      <form method="post">
+      <table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered w-auto">
       <thead>
+            <tr>
+            <th>
+            <?php
+              creaComboTipoInformeBT($IdTipoInforme)
+              ?>
+            </th>
+							<th>
+                <input type="text" class="form-control form-control-sm" id="numeroInforme" name="numeroInforme" aria-describedby="Numero" maxlength="10" value="<?=$numeroInforme?>">
+              </th>
+							<th> 
+                <input type="text" class="form-control form-control-sm" id="Ot" name="ot" maxlength="10" value="<?=$ot?>">
+              </th>
+							<th>
+                <input type="text" class="form-control form-control-sm" id="sello" name="sello" maxlength="10" value="<?=$sello?>">
+              </th>
+              <th></th>
+							<th>
+              <input type="date" name="fechaInicioVcto" placeholder="dd-mm-yyyy" class="form-control form-control-sm" value="<?=$fechaInicioVcto?>">
+              <input type="date" name="fechaFinVcto" placeholder="dd-mm-yyyy" class="form-control form-control-sm" value="<?=$fechaFinVcto?>">
+
+
+              </th>
+              <th>
+              <?php
+                 creaComboEstado($IdEstado)
+              ?>
+                
+              </th>
+              <th>
+              <button id="btnSearch" type="submit" class="form-control form-control-sm btn btn-primary btn-sm btn-danger">Buscar</button>
+
+              </th>
+            </tr>
 						<tr>
 							<th>Tipo</th>
 							<th>N&uacute;mero</th>
@@ -153,7 +281,6 @@
 							<th>Fecha Vencimiento</th>
               <th>Estado</th>
               <th>Descripci&oacute;n</th>
-
             </tr>
 					</thead>
 
@@ -170,41 +297,27 @@
         printf ( '          <td>%s</td>', muestraFechaDDMMAAAA($rowInforme ["fechaEmision"] ));
         printf ( '          <td>%s</td>', muestraFechaDDMMAAAA($rowInforme ["fechaVencimiento"]) );      
         printf ( '          <td>%s</td>', $rowInforme ["Estado"] );      
-        
-        
-        
         printf ( '          <td>%s</td>', $rowInforme ["descripcion"]  );
         
 
       }
 
-      echo '  <tr></table>';
+      echo '  <tr>';
     
     ?>
 
+   </table>
 
 
-
-         <div class="row">
-          <div class="col-lg-4"> </div>
-          <div class="col-lg-4 mt-4 mt-lg-0"> </div>
-          <div class="col-lg-4 mt-4 mt-lg-0"> </div>
-        </div>
-
-          </div>
-          <div class="col-lg-4 mt-4 mt-lg-0"> </div>
-          <div class="col-lg-4 mt-4 mt-lg-0"> </div>
-        </div>
+</form>
 
       </div>
     </section><!-- End Featured Section -->
     </section><!-- End Counts Section -->
 
 
-      </div>
-          <div class="col-lg-4 mt-4 mt-lg-0"> </div>
-          <div class="col-lg-4 mt-4 mt-lg-0"> </div>
-        </div>
+     
+    
 
       </div>
     </section><!-- End Featured Section -->
@@ -364,6 +477,10 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  
+
+
 
 </body>
 

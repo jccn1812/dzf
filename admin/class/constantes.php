@@ -68,6 +68,12 @@ define("mensajeEmailAdmin","Señor Administrador:". "\n". " El siguiente es un m
 define("consIdUsuarioDirector","3");// Id de perfil de los usuarios Directores
 define("consIdUsuarioInspector","2");// Id de perfil de los usuarios Inspectores
 
+//Numero de filas definidas para paginadores
+define("consFilasPagina",10);
+
+//Numero de dias para que informe sea considerado por vencer
+define("consDiasPorVencer",5); 
+
 
 define("mensajeMailSuscEnviado","Hemos enviado un mail de confirmaci&oacute;n de suscripci&oacute;n  a la cuenta de correo electr&oacute;nico indicado. ");//
 define("mensajeCuerpoMailSusc","Esta es una confirmaci&oacute;n de la suscripci&oacute;n al sistema autom&aacute;tico de informaci&oacute;n de be-web.cl.  ");//

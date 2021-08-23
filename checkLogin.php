@@ -32,6 +32,7 @@
                 $sesion->setSession('ID_EMPRESA',$IdEmpresa);
                 $sesion->setSession('RUT',$rut);
                 $sesion->setSession('EMPRESA',$empresa);
+                $sesion->setSession('RAZON',$razonSocial);
                 $sesion->setSession('IS_LOGIN',TRUE);
                 echo '1';
 
