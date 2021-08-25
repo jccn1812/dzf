@@ -20,7 +20,17 @@
     $fechaInicioVcto = $_POST ["fechaInicioVcto"];
     $fechaFinVcto    = $_POST ["fechaFinVcto"];
 
+    $paginaActual    = $_POST ["pagina"];
+
+    $toExcel         = $_POST ["toExcel"];
+
+  
     
+    if(empty($paginaActual))
+    {
+      $paginaActual = 1;
+    };
+
 
 
     $informes = new informes ( );
@@ -33,16 +43,37 @@
 
     $informes->setFechaInicioVcto($fechaInicioVcto);
     $informes->setFechaFinVcto($fechaFinVcto);
-    
     $informes->setFilasInforme(consFilasPagina);
+    
+    /*
+    if($toExcel=="1"){
+      $informes->setFilasInforme(consFilasPaginaTotal);    
+    }
+    */
     $informes->setDiasPorVencer(consDiasPorVencer);
-    $informes->setPagina(1);
+    $informes->setPagina($paginaActual);
 
 
 
 
 
 		$arrInformes = $informes->listaInformesPorCriterio ();
+    
+    $registros = $informes->cuentaInformesPorCriterio ();
+
+
+    $rowDato = mysqli_fetch_object( $registros );
+    $filas = $rowDato->filas;
+    if($filas<consFilasPagina)
+      {
+            $paginas = 1;
+      }
+    else{
+      $paginas = round(($filas/consFilasPagina)+.5);
+    }   
+
+
+
 
     function muestraTipoInforme($tipoInforme){
       switch($tipoInforme)
@@ -194,6 +225,8 @@
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
+
+    
       <nav id="navbar" class="navbar">
         <ul>
           <li><strong><a href="index.php">INICIO</a></strong></li>
@@ -235,9 +268,28 @@
            <!-- ======= Featured Section ======= -->
     <section id="featured" class="featured">
       <div class="container">
+
+      <div>
+        <h6>
+          <?php
+            echo $empresa ."<br>";
+            echo $rut;
+          ?>
+        </h6>
+      </div>
+
+      <div><label><?php echo consBiblioMSG?></label></div><br>
+
   
-      <form method="post">
-      <table cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered w-auto">
+      <form id="frmbiblio" method="post">
+      <input type="hidden" name="pagina" id="pagina" value="">  
+      <input type="hidden" name="toExcel" id="toExcel" value="<?php echo $toExcel ?>">  
+
+     <!-- <a href="#" id="btnExtendTable" class="btn-primary btn-sm btn-danger stretched-link" onclick='extiendeTabla()' >Exportar a excel</a-->
+      
+
+
+      <table id="tblInformes" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered w-auto">
       <thead>
             <tr>
             <th>
@@ -289,6 +341,20 @@
         $x=0;
         while ( $rowInforme = mysqli_fetch_array ( $arrInformes ) ) {
         $x ++;
+        
+        switch ($rowInforme ["Estado"]){
+
+          case "Vigente":            
+            $detalle = $rowInforme ["Estado"] . "&nbsp;&nbsp;&nbsp;<img src='assets/img/verde.jpg'>";
+            break;
+          case "Vencido":
+            $detalle = $rowInforme ["Estado"] . "&nbsp;&nbsp;&nbsp;<img src='assets/img/rojo.jpg'>";
+            break;    
+          case "Por vencer":
+            $detalle = $rowInforme ["Estado"] . "&nbsp;<img src='assets/img/amarrillo.jpg'>";
+            break;  
+        }
+
         echo '<tr class="gradeA">';
         printf ( '          <td>%s</td>', muestraTipoInforme($rowInforme ["IdTipoInforme"] ));
         printf ( '          <td>%s</td>', $rowInforme ["numeroInforme"] );
@@ -296,7 +362,7 @@
         printf ( '          <td>%s</td>', $rowInforme ["sello"] );
         printf ( '          <td>%s</td>', muestraFechaDDMMAAAA($rowInforme ["fechaEmision"] ));
         printf ( '          <td>%s</td>', muestraFechaDDMMAAAA($rowInforme ["fechaVencimiento"]) );      
-        printf ( '          <td>%s</td>', $rowInforme ["Estado"] );      
+        printf ( '          <td nowrap>%s</td>', $detalle );      
         printf ( '          <td>%s</td>', $rowInforme ["descripcion"]  );
         
 
@@ -307,6 +373,23 @@
     ?>
 
    </table>
+
+   <nav aria-label="Pagina">
+   <ul class="pagination justify-content-end">
+  <?php
+   for ($x = 1; $x <= $paginas; $x++) {
+        if($x==$paginaActual){
+          echo " <li class='page-item active' aria-current='page'>";
+        }
+        else
+        {
+          echo "<li class='page-item'>";
+        }
+        echo "<a href='#' class='page-link' onclick='asignaPag($x)'>$x</a></li> ";
+   } 
+  ?>
+  </ul>
+</nav>
 
 
 </form>
@@ -466,6 +549,9 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <script src="assets/js/jquery.js"></script>
+
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
@@ -475,9 +561,12 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
 
+  
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  
+  
   
 
 

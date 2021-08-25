@@ -98,6 +98,10 @@
    * Boton del popUp Login
    */
 
+        
+
+
+
   $('#btnSubmitForm').click(function()
   {
      if($('#password').val()=='' || $('#rutCliente').val()==''){
@@ -126,8 +130,9 @@
      $("#frmLogout").submit(); 
      return;
 
-
   });
+  
+
   
 
 
@@ -297,3 +302,16 @@
   });
 
 })()
+
+function asignaPag(pagina)
+  {
+    $("#pagina").val(pagina);
+    $("#frmbiblio").submit(); 
+    return;
+  }
+
+function extiendeTabla(){
+  $("#toExcel").val("1");
+  $("#frmbiblio").submit(); 
+  return;
+}

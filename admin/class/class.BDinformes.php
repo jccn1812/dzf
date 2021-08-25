@@ -161,6 +161,9 @@ class informes extends Database
 
  public function listaInformesPorCriterio()
  {
+
+  if($this->pagina==1) $this->pagina = 0; 
+
   $connection = Database::Connect();
   $this->query =  "CALL sp_etereusCMS_select_listaInformesPorCriterio(
                   ".$this->ChequeaNull ($this->numeroInforme,"S").",
@@ -193,18 +196,64 @@ class informes extends Database
     $this->query = $this->query . "'" .$this->fechaFinVcto."'," ; 
   }
 
-  $this->query = $this->query .$this->ChequeaNull ($this->IdEstado,"S").",
+  $this->query = $this->query .$this->ChequeaNull ($this->idEstado,"S").",
                 ".$this->ChequeaNull ($this->diasPorVencer,"N").",
                 ".$this->ChequeaNull ($this->filasInforme,"S").",
-                ".$this->ChequeaNull ($this->pagina,"N").")";
+                ".$this->pagina .")";
   
-  echo $this->query;
-  
+
   $this->result = Database::Reader($this->query,$connection);
   Database::desconectar($connection);
   return $this->result;
  }
     
+ public function cuentaInformesPorCriterio()
+ {
+  $connection = Database::Connect();
+  $this->query =  "CALL sp_etereusCMS_select_cuentaInformesPorCriterio(
+                  ".$this->ChequeaNull ($this->numeroInforme,"S").",
+                  ".$this->ChequeaNull ($this->IdTipoInforme,"S").",
+                  ".$this->ChequeaNull ($this->ot,"S").",";
+
+                  
+  
+  if(empty($this->sello)){
+    $this->query = $this->query . "NULL,";
+  }                
+  else
+  {
+    $this->query = $this->query . "'" .$this->sello."'," ; 
+  }
+
+  $this->query = $this->query .$this->ChequeaNull ($this->IdEmpresa,"N").",";
+
+  if(empty($this->fechaInicioVcto)){
+    $this->query = $this->query . "NULL,";
+  }                
+  else
+  {
+    $this->query = $this->query . "'" .$this->fechaInicioVcto."'," ; 
+  }
+
+  if(empty($this->fechaFinVcto)){
+    $this->query = $this->query . "NULL,";
+  }                
+  else
+  {
+    $this->query = $this->query . "'" .$this->fechaFinVcto."'," ; 
+  }
+
+  $this->query = $this->query .$this->ChequeaNull ($this->idEstado,"S").",
+                ".$this->ChequeaNull ($this->diasPorVencer,"N").")";
+  
+
+
+  $this->result = Database::Reader($this->query,$connection);
+  Database::desconectar($connection);
+  return $this->result;
+ }
+
+
  
  function ChequeaNull($valorConvertir,$esNumero)
  {

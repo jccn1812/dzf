@@ -57,6 +57,9 @@ define("SENDPASSWORDSMSG","Tenemos el agrado de informarle su contraseña para e
                            ha contratado con nosotros.");
 define("SENDPASSWORDSUBJ","Envío de clave de acceso DZF Certifica");
 
+define("consBiblioMSG","Estimado cliente, el siguiente es el detalle de los informes registrados para su empresa
+en nuestro sistema administrativo.");
+
 
 
 
@@ -70,6 +73,10 @@ define("consIdUsuarioInspector","2");// Id de perfil de los usuarios Inspectores
 
 //Numero de filas definidas para paginadores
 define("consFilasPagina",10);
+
+//Numero de filas definidas para paginadores, para mostrar la pagina completa
+define("consFilasPaginaTotal",10000);
+
 
 //Numero de dias para que informe sea considerado por vencer
 define("consDiasPorVencer",5); 
