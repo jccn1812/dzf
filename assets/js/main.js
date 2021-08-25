@@ -310,8 +310,11 @@ function asignaPag(pagina)
     return;
   }
 
-function extiendeTabla(){
-  $("#toExcel").val("1");
+function exportaExcel(){
+  $("#frmbiblio").attr("action","biblioexcel.php");
+  $("#frmbiblio").attr("target","blank");
   $("#frmbiblio").submit(); 
+  $("#frmbiblio").attr("action","#");
+ 
   return;
 }

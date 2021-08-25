@@ -22,7 +22,6 @@
 
     $paginaActual    = $_POST ["pagina"];
 
-    $toExcel         = $_POST ["toExcel"];
 
   
     
@@ -45,11 +44,6 @@
     $informes->setFechaFinVcto($fechaFinVcto);
     $informes->setFilasInforme(consFilasPagina);
     
-    /*
-    if($toExcel=="1"){
-      $informes->setFilasInforme(consFilasPaginaTotal);    
-    }
-    */
     $informes->setDiasPorVencer(consDiasPorVencer);
     $informes->setPagina($paginaActual);
 
@@ -280,13 +274,11 @@
 
       <div><label><?php echo consBiblioMSG?></label></div><br>
 
-  
+       
       <form id="frmbiblio" method="post">
       <input type="hidden" name="pagina" id="pagina" value="">  
-      <input type="hidden" name="toExcel" id="toExcel" value="<?php echo $toExcel ?>">  
-
-     <!-- <a href="#" id="btnExtendTable" class="btn-primary btn-sm btn-danger stretched-link" onclick='extiendeTabla()' >Exportar a excel</a-->
       
+     <button type="button" class="btn btn-primary btn-sm btn-danger" onclick='exportaExcel()'>Exportar a Excel</button>
 
 
       <table id="tblInformes" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered w-auto">
