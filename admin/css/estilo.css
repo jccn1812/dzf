@@ -344,6 +344,15 @@ color:#333333;
 width:200px;
 }
 
+.combo_txtFilter {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#333333;
+	width:60px;
+	}
+	
+
+
 .div_arbol {
 width:725px;
 height:300;
@@ -388,8 +397,20 @@ font-size:11px;
 
 }
 
-
-
+.txtcampocorto{
+	color:#000000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	width:65px;
+}
+	
+.txtcampomediano{
+	color:#000000;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	width:95px;
+}
+	
 
 
 
@@ -419,6 +440,17 @@ font-family:Arial, Helvetica, sans-serif;
 font-size:10px;
 font-weight:bold;
 }
+
+.tabla_titubarfilter {
+	background-color: #003399;
+	color:#FFFFFF;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:10px;
+	font-weight:bold;
+	width: 30px;
+	}
+	
+
 
 .tabla_titubarVch {
 background-color: #003399;
@@ -489,7 +521,7 @@ font-size:16px;
 font-weight:bold;
 padding-top:12px;
 padding-bottom:3px;
-*/border-top:5px;
+/*border-top:5px;
 border-bottom: dotted 1px;
 border-bottom-color: #0066CC;
 */

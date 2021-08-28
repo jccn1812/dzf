@@ -232,6 +232,98 @@ function CompruebaNulo($valor)
 
 }
 
+function muestraTipoInforme($tipoInforme){
+	switch($tipoInforme)
+	{
+	  case 1:
+		return "Inspecci&oacute;n";
+		break;
+	  case 2:	
+		return "Capacitaci&oacute;n";
+		break;
+	  case 3:
+		return "Certificac&oacute;n";		
+		break;
+	}
+  }
+
+  function creaComboTipoInformeBT($comparadorTipoInforme){
+	  
+	$selectInspeccion = "";
+	$selectCapacitacion = "";
+	$selectCertificacion = "";
+  
+	if($comparadorTipoInforme=="1") $selectInspeccion     = "selected";
+	if($comparadorTipoInforme=="2") $selectCapacitacion   = "selected";
+	if($comparadorTipoInforme=="3") $selectCertificacion  = "selected";
+  
+	echo '
+	  <select id="cmbTipoInforme" name="cmbTipoInforme" class="form-select form-select-sm"" aria-label=".form-select-lg example">
+		<option value="">Seleccione</option>
+		<option value="1" '.$selectInspeccion.'>Inspecci&oacute;n</option>
+		<option value="2" '.$selectCapacitacion.'>Capacitaci&oacute;n</option>
+		<option value="3" '.$selectCertificacion.'>Certificaci&oacute;n</option>
+	  </select>';
+   }
+  
+   function creaComboTipoInformeBTADM($comparadorTipoInforme){
+	  
+	$selectInspeccion = "";
+	$selectCapacitacion = "";
+	$selectCertificacion = "";
+  
+	if($comparadorTipoInforme=="1") $selectInspeccion     = "selected";
+	if($comparadorTipoInforme=="2") $selectCapacitacion   = "selected";
+	if($comparadorTipoInforme=="3") $selectCertificacion  = "selected";
+  
+	echo '<select id="cmbTipoInforme" name="cmbTipoInforme" class="combo_txtFilter">
+		<option value="">Seleccione</option>
+		<option value="1" '.$selectInspeccion.'>Inspecci&oacute;n</option>
+		<option value="2" '.$selectCapacitacion.'>Capacitaci&oacute;n</option>
+		<option value="3" '.$selectCertificacion.'>Certificaci&oacute;n</option>
+	  </select>';
+   }
+  
+
+
+   function creaComboEstadoADM($comparadorEstado){
+	  
+	$selectInspeccion = "";
+	$selectCapacitacion = "";
+	$selectCertificacion = "";
+  
+	if($comparadorEstado=="1") $selectVigente ="selected";
+	if($comparadorEstado=="2") $selectVencido ="selected";
+	if($comparadorEstado=="3") $selectPorVencer ="selected";
+  
+	echo '
+	  <select id="cmbEstado" name="cmbEstado" class="combo_txtFilter">
+		<option value="">Seleccione</option>
+		<option value="1" '.$selectVigente.'>Vigente</option>
+		<option value="2" '.$selectVencido.'>Vencido</option>
+		<option value="3" '.$selectPorVencer.'>Por vencer</option>
+	  </select>';
+   }
+
+   function creaComboEstado($comparadorEstado){
+	  
+	$selectInspeccion = "";
+	$selectCapacitacion = "";
+	$selectCertificacion = "";
+  
+	if($comparadorEstado=="1") $selectVigente ="selected";
+	if($comparadorEstado=="2") $selectVencido ="selected";
+	if($comparadorEstado=="3") $selectPorVencer ="selected";
+  
+	echo '
+	  <select id="cmbEstado" name="cmbEstado" class="form-select form-select-sm"" aria-label=".form-select-lg example">
+		<option value="">Seleccione</option>
+		<option value="1" '.$selectVigente.'>Vigente</option>
+		<option value="2" '.$selectVencido.'>Vencido</option>
+		<option value="3" '.$selectPorVencer.'>Por vencer</option>
+	  </select>';
+   }
+
 
 function CompruebaNuloValor($valor)
 {
@@ -428,31 +520,6 @@ function convierteFecha($lafecha){
 }
 
 
-function creaComboCuentaIdentificador($Identicador,$comparador){
-    
-    
-    include_once("../class/class.BDcuentas.php");
-    $objCuentas = new cuentas();
-    $objCuentas->IdEncCuenta = obtieneIdEncabezadoActivo();
-    $result =  $objCuentas->listaCuentas();
-    
-    $comboCta = "<select class='combo_txt' name='".$Identicador."' id='".$Identicador."'>"."\n";
-    $comboCta = $comboCta ."<option value='' SELECTED>Seleccione cuenta</option>"."\n";
-    while ($row = mysqli_fetch_array($result))
-    {
-        $comboCta .=   "<option value='".$row['IdCuenta']."'";
-
-        if($comparador==$row['IdCuenta']) {
-            $comboCta = $comboCta ."selected ";
-        }
-        
-        $comboCta .= ">".$row['cuenta'].'-'.$row['Descripcion']. "</option>"."\n";
-    }
-    $comboCta .= "</select>"."\n";
-    
-    echo $comboCta;
-    
-}
 
 
 

@@ -16,6 +16,7 @@ include_once ('IntF.dos.php');
 */
 
 class Htmlinformes extends classHtml implements funcionalidad {
+
 	/* Datos del formulario */
 	private $accion;   
 	private $arrInformes;         
@@ -28,12 +29,17 @@ class Htmlinformes extends classHtml implements funcionalidad {
 
 	private $fechaEmision;      
 	private $fechaVencimiento;  
+ 
+	public $fechaInicioVcto; 
+	public $fechaFinVcto;  
+
 	private $IdUsuarioDirector; 
 	private $IdUsuarioInspector;
 	private $laaccion;
 
 	private $listaPermisos;
 	private $sello;
+	private $idEstado;
    
 	
 	public function setlaAccion($laaccion) {
@@ -72,6 +78,18 @@ class Htmlinformes extends classHtml implements funcionalidad {
 		$this->fechaVencimiento = $fechaVencimiento;
 	}
 
+	function setFechaInicioVcto($fechaInicioVcto)
+	{
+		$this->fechaInicioVcto = $fechaInicioVcto;
+	}
+  
+	function setFechaFinVcto($fechaFinVcto)
+	{
+		$this->fechaFinVcto = $fechaFinVcto;
+	}
+  
+
+
 	public function setIdUsuarioDirector($IdUsuarioDirector) {
 		$this->IdUsuarioDirector = $IdUsuarioDirector;
 	}
@@ -87,6 +105,10 @@ class Htmlinformes extends classHtml implements funcionalidad {
 	
 	public function setSello($sello) {
 		$this->sello = $sello;
+	}
+
+	public function setIdEstado($IdEstado) {
+		$this->IdEstado = $IdEstado;
 	}
 
 
@@ -253,41 +275,80 @@ class Htmlinformes extends classHtml implements funcionalidad {
 	public function bodyAdministrador() {
 		
 
+		echo '<table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#CCCCCC">
+				<tr>
+				<td></td>
+				<td>';
+				  creaComboTipoInformeBTADM($this->IdTipoInforme);
+		echo '		
+				</td>
+				  <td>
+					<input type="text" class="txtcampocorto" id="numeroInforme" name="numeroInforme"  maxlength="10" value="'.$this->numeroInforme.'">
+				  </td>
+				  <td> 
+					<input type="text" class="txtcampocorto" id="Ot" name="ot" maxlength="10" value="'.$this->ot.'">
+				  </td>
+				<td>
+					<input type="text" class="txtcampocorto" id="sello" name="sello" maxlength="10" value="'.$this->sello.'">
+				  </td>
+				  <td></td>
+				  <td>
+				  <input type="date" class="txtcampomediano" name="fechaInicioVcto" placeholder="dd-mm-yyyy"  value="'.$this->fechaInicioVcto.'"><br>
+				  <input type="date" class="txtcampomediano" name="fechaFinVcto" placeholder="dd-mm-yyyy" value="'.$this->fechaFinVcto.'">
+	
+	
+				  </td>
+				  <td>';
+				  
+				 creaComboEstadoADM($this->IdEstado);
+		
 		echo '
-     		 <div class="estilo" id="contenedor_item">
-                    <table width="100%" border="0" cellpadding="0" cellspacing="0" bordercolor="#CCCCCC">
-     		       <tr>
-     		         <td width="5%" align="center" class="tabla_titubar">N&ordm;</td>
+				  </td>
+				  <td>
+				  <input type="button" class="Boton" id="btnSearch" value="Buscar">
+				  &nbsp;&nbsp;&nbsp;&nbsp;<img id="ImgExcel" src="../images/xcl.jpg" title="Exportar lista a Excel">
+				  </td>
+				</tr>
 
-     		         <td width="10%" class="tabla_titubar">N&uacute;mero</td>
-     		         <td width="20%" class="tabla_titubar">Tipo de Informe</td>
-					 <td width="10%" class="tabla_titubar">Fecha de Creaci&oacute;n</td>
-				     <td width="15%" class="tabla_titubar">Fecha de Vencimiento</td>
-					 <td width="30%" class="tabla_titubar">Inspector</td>
-					
-     		         <td width="5%" align="center" class="tabla_titubar">Editar</td>
-     		         <td width="5%" align="center" class="tabla_titubar">Borrar</td>
-     		       </tr>';
+
+
+     		       <tr>
+					<td class="tabla_titubar">#</td>
+					<td width="20%" class="tabla_titubarfilter">Tipo</td>
+					<td width="10%" class="tabla_titubarfilter">N&uacute;mero</td>
+					<td width="5%" class="tabla_titubar">OT</td>
+					<td width="5%" class="tabla_titubar">Sello</td>
+					<td width="10%" class="tabla_titubar">Fecha creaci&oacute;n</td>
+					<td width="10%" class="tabla_titubar">Fecha Vcto.</td>
+					<td width="10%" class="tabla_titubar">Estado</td>
+					<td class="tabla_titubar">Descripci&oacute;n</td>
+					<td width="5%" align="center" class="tabla_titubar">Editar.</td>
+     		         <td width="5%" align="center" class="tabla_titubar">Eliminar</td>
+        		   </tr>';
 
 		if (mysqli_num_rows ( $this->arrInformes ) == 0) {
 			echo "<tr>" . "\n";
 			echo " <td colspan='7' align='center' class='tabla_listado'>No existen Informes en el sistema</td>
                  </tr>
-                 </table>";
+                 </table>
+				 </form>";
 			return;
 		}
 
 		while ( $rowInforme = mysqli_fetch_array ( $this->arrInformes ) ) {
 			$x ++;
 			echo '          <tr>';
-			printf ( '	        <td align="center" class="tabla_listado">%d</td>', $x );
-			printf ( '          <td class="tabla_listado">%s</td>', $rowInforme ["numeroInforme"] );
-			printf ( '          <td class="tabla_listado">%s</td>', $this->muestraTipoInforme($rowInforme ["IdTipoInforme"]) );
-			printf ( '          <td class="tabla_listado">%s</td>', muestraFechaDDMMAAAA($rowInforme ["fechaEmision"]) );
-			printf ( '          <td class="tabla_listado">%s</td>', muestraFechaDDMMAAAA($rowInforme ["fechaVencimiento"]) );
-			
-			printf ( '          <td class="tabla_listado">%s</td>', $rowInforme ["nombreInspector"]  );
-			
+			printf ( '          <td class="tabla_listado">%s</td>', $x);
+			printf ( '          <td class="tabla_listado">%s</td>', muestraTipoInforme($rowInforme ["IdTipoInforme"] ));
+        	printf ( '          <td class="tabla_listado">%s</td>', $rowInforme ["numeroInforme"] );
+			printf ( '          <td class="tabla_listado">%s</td>', $rowInforme ["Ot"] );
+			printf ( '          <td class="tabla_listado">%s</td>', $rowInforme ["sello"] );
+			printf ( '          <td class="tabla_listado">%s</td>', muestraFechaDDMMAAAA($rowInforme ["fechaEmision"] ));
+			printf ( '          <td class="tabla_listado">%s</td>', muestraFechaDDMMAAAA($rowInforme ["fechaVencimiento"]) );      
+			printf ( '          <td class="tabla_listado" nowrap>%s</td>', $rowInforme ["Estado"] );      
+			printf ( '          <td class="tabla_listado">%s</td>', $rowInforme ["descripcion"]  );
+				
+
 
 			echo '   <td align="center" class="tabla_listado"><input class="btnEdit" type="image" src="../images/list_modificar.gif" width="16" height="16" border="0" value="' . $rowInforme ["IdInforme"] . '"/></td>
      		         <td align="center" class="tabla_listado"><input class="btnElim" type="image" src="../images/list_eliminar.gif"  width="16" height="16" border="0" value="' . $rowInforme ["IdInforme"] . '"/></td>
@@ -295,6 +356,7 @@ class Htmlinformes extends classHtml implements funcionalidad {
 		}
 
 		echo '  </table>
+				</form>
      		   </div>';
 
 	}
@@ -305,7 +367,27 @@ class Htmlinformes extends classHtml implements funcionalidad {
 		include_once ("class.BDInformes.php");
 		$informes = new informes ( );
 		$informes->setIdEmpresa($this->IdEmpresa);
-		$this->arrInformes = $informes->listaInformes ();
+		$informes->setPagina(1);
+		$informes->setFilasInforme(consFilasPaginaTotal);
+		$informes->setDiasPorVencer(consDiasPorVencer);
+		
+		$informes->setIdEmpresa($this->IdEmpresa);
+		$informes->setIdTipoInforme($this->IdTipoInforme);
+
+		$informes->setNumeroInforme($this->numeroInforme);
+		$informes->setOt($this->ot);
+		$informes->setSello($this->sello);
+		
+		$informes->setIdEstado($this->IdEstado);
+
+    	$informes->setFechaInicioVcto($this->fechaInicioVcto);
+    	$informes->setFechaFinVcto($this->fechaFinVcto);
+    
+
+
+
+
+		$this->arrInformes = $informes->listaInformesPorCriterio();
 	}
 
 	public function recolectaRegistrosEliminacion() {

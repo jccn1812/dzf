@@ -9,7 +9,7 @@ f = document.forms[0];
  $("#imprimir").css("cursor","pointer");
  $("#bntSbm").css("cursor","pointer");
  $(".Boton").css("cursor","pointer");
- $("#volverAtras").css("cursor","pointer");
+ $("#volverAtras,#btnExcel").css("cursor","pointer");
  
  
 
@@ -49,6 +49,13 @@ $("#bntSbm").click(function(){
                                  f.accion.value ="3";
                                  f.submit();
  				})     
+
+    $("#btnSearch").click(function(){
+      f.accion.value = "";
+      f.submit();
+
+    });
+
 
   $("#volverInformes").click(function(){       
           f.accion.value="";                       
@@ -108,7 +115,15 @@ $(".btnElim").click(function(x){
                                   }                                                                
                                })
                                
+$("#ImgExcel").click(function(x){
+                               f.action="../../biblioexcel.php";
+                               f.target="blank";
+                               f.submit(); 
+                               f.action="mantenedorInformes.php";
                                
+                                return;
+                              })
+                                                         
                                
  
 

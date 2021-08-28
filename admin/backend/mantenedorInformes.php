@@ -14,9 +14,14 @@ $numeroInforme      = $_POST ["numeroInforme"];
 $descripcion        = $_POST ["descripcion"];
 $fechaEmision       = $_POST ["fechaEmision"];
 $fechaVencimiento   = $_POST ["fechaVencimiento"];
+
+$fechaFinVcto       = $_POST ["fechaFinVcto"];
+$fechaInicioVcto    = $_POST ["fechaInicioVcto"];
+
 $IdUsuarioDirector  = $_POST ["cmbDirector"];
 $IdUsuarioInspector = $_POST ["cmbInspector"];
 $sello              = $_POST ["sello"];
+$IdEstado           = $_POST ["cmbEstado"];
 
 $permisos           = $_POST ["perm"];
 
@@ -43,13 +48,22 @@ $mantenedor->setOt($ot);
 $mantenedor->setDescripcion($descripcion);
 $mantenedor->setFechaEmision ($fechaEmision);
 $mantenedor->setFechaVencimiento($fechaVencimiento);
+
+$mantenedor->setFechaInicioVcto($fechaInicioVcto);
+$mantenedor->setfechaFinVcto($fechaFinVcto);
+
+
+
 $mantenedor->setIdUsuarioDirector ( $IdUsuarioDirector );
 $mantenedor->setIdUsuarioInspector ( $IdUsuarioInspector );
 
 $mantenedor->setListaPermisos ( $permisos );
 $mantenedor->setSello ( $sello );
+$mantenedor->setIdEstado ( $IdEstado );
 
 $mantenedor->getMantenedor ( $accion );
+
+
 
 ?>
 

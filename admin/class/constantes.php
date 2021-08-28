@@ -9,7 +9,7 @@
 define("NombreAplicacion","DZFCertifica :: Portal Web ::  ");// El titulo para las paginas en el navegador
 
 //Mensaje footer
-$msg =  '<div id="footer">SmartPeople s.a. / Etereus CMS
+$msg =  '<div id="footer">Creativa Inform&aacute;tica s.a. / Etereus CMS
          <div align="center">Poductos inform&aacute;ticos - Desarrollo web - Asesor&iacute;as</div>
         <div align="center">
         <div align="center"><a href="mailto:jccn1812@gmail.com">Correo electr&oacute;nico:jccn1812@gmail.com</a></div> </div>';
@@ -42,7 +42,7 @@ define("BDPort","3306");               // El puerto
 define("EMAILADMIN","admin@dfzcertifica.com");// Cuenta de correos para el envio
 define("EMAILADMINPASS","Dfzcertifica2021.");// Cuenta de correos para el envio
 
-define("servidorSMTP","mail.dfzcertifica.com");// Servidor de correos
+define("SERVIDORSMTP","mail.dfzcertifica.com");// Servidor de correos
 define("mensajeFormularioContactos","Gracias por su interes en contactarse con nosotros.
                                      Estamos muy interesados en conocer su opini&oacute;n por lo
                                      que le solicitamos llenar los datos de este formulario y hacer clic
