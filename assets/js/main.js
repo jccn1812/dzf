@@ -159,7 +159,7 @@
     setTimeout(function(){
       
       $.ajax({
-        url: "contact.php",
+        url: "forms/contact.php",
         type: "POST",
         data: {
           nombre: $("#name").val(),

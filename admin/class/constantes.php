@@ -43,6 +43,8 @@ define("EMAILADMIN","admin@dfzcertifica.com");// Cuenta de correos para el envio
 define("EMAILTO","jccn1812@gmail.com");// Cuenta de correos para la recepción
 define("EMAILADMINPASS","Dfzcertifica2021.");// Cuenta de correos para el envio
 define("EMAILSUBJECT","Contacto desde formulario de contacto");// Cuenta de correos para el envio
+define("EMAILHEADERFROM","Formulario de contacto DFZCertifica");// Cuenta de correos para el envio
+
 
 
 define("SERVIDORSMTP","mail.dfzcertifica.com");// Servidor de correos

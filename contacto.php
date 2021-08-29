@@ -137,7 +137,7 @@
           <div class="col-lg-6 "><a href="https://www.google.com/maps/place/DZF+CERTIFICA/@-33.5564308,-70.7973404,17z/data=!4m5!3m4!1s0x9662dd4835891a6f:0xf920291900105d8d!8m2!3d-33.5563823!4d-70.7973921?hl=es" target="new"> &nbsp;    &nbsp;   &nbsp;  <img src="assets/img/mapa.jpg" width="486" height="318" alt=""/></a></div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" required>
@@ -150,14 +150,15 @@
                 <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Teléfono" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Mensaje" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Enviar</button></div>
+              <div class="text-center">
+              <button type="button" id="btnMail" class="btn btn-secondary btn-sm btn-danger">Enviar</button>  
             </form>
           </div>
 
@@ -198,7 +199,7 @@
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>ContactO</h4>
+            <h4>Contacto</h4>
             <p> El Esfuerzo 24, Padre Hurtado, <br>
               Región Metropolitana <br>
               <br>
@@ -230,11 +231,12 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <script src="assets/js/jquery.js"></script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/purecounter/purecounter.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
