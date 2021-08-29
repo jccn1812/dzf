@@ -108,16 +108,26 @@
        return false;
      }
 
-     $.post("checkLogin.php",{
-                              rut:$("#rutCliente").val(),
-    	                        password:$("#password").val()
-    	                       },function(data){ 
-    	                    	   if(data=='1'){
-                                  document.forms[0].method = "post";
-                                  document.forms[0].submit();
-                                }                   
-	  	})
+     $(this).html('<span class="sr-only">Ingresando&nbsp;&nbsp; </span><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+     
+     setTimeout(function(){
+        
+        $.ajax({
+          url: "checkLogin.php",
+          type: "POST",
+          data: {
+                  rut: $("#rutCliente").val(),
+                  password:$("#password").val()
+          }, 
+          success: (function(result){
+                                      document.forms[0].method = "post";
+                                      document.forms[0].submit();
+          })
+        });
+        
+    }, 2000);
 
+    
      return;
 
 
@@ -125,14 +135,48 @@
 
   $('#btnLogout').click(function()
   {
-     $.post("logout.php",{},function(data){ 
-    	})
-     $("#frmLogout").submit(); 
-     return;
-
+    $(this).html('<span class="sr-only">Cerrando sesión&nbsp;&nbsp; </span><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+    setTimeout(function(){
+      
+                            $.ajax({
+                              url: "logout.php",
+                              type: "POST",
+                              success: (function(){
+                                                    document.forms[0].method = "post";
+                                                    document.forms[0].submit();        
+                              })
+                            });
+                            
+      
+                          },2000);
   });
   
 
+  $('#btnMail').click(function()
+  {
+    $(this).html('<span class="sr-only">Enviando&nbsp;&nbsp; </span><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>');
+
+    setTimeout(function(){
+      
+      $.ajax({
+        url: "contact.php",
+        type: "POST",
+        data: {
+          nombre: $("#name").val(),
+          email:$("#email").val(),
+          telefono:$("#telefono").val(),
+          mensaje:$("#mensaje").val()
+        }, 
+        success: (function(){
+                              document.forms[0].method = "post";
+                              document.forms[0].submit();        
+        })
+      });
+      
+
+    },2000);
+
+  });
   
 
 

@@ -4,6 +4,6 @@ session_start();
 
 $sesion = new sesion();
 $sesion->closeSession();
+echo "1";
 
-echo 'Logout';
 ?>

@@ -95,11 +95,12 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
         
         If( !empty($isLoged))
         {
-          echo "<div class='d-flex p-2 bd-highlight'><p class='smalltext'>";
+          echo "<div class='px-2'><p class='smalltext'>";
 	        echo $sesion->getSession('EMPRESA');
-          echo "</p>";
-          echo "<form id='frmLogout'>";
-          echo "<button type='button' id='btnLogout' class='close'>Cerrar sesión</button>";
+          echo '</p';
+          
+          echo "<form id='frmLogout' method='post' action='#'>";
+          echo '<button type="button" id="btnLogout" class="btn btn-secondary btn-sm btn-danger">Cerrar sesión</button>';
           echo "</form>";
           echo "</div>";
         }
