@@ -58,10 +58,10 @@ define("mensajeFormularioContactos","Gracias por su interes en contactarse con n
                                      en el bot&oacute;n env&iacute;ar.");// Servidor de correos
 define("SENDPASSWORDMAIL","1"); // Envio de correo con la password generada para el cliente
 define("SENDPASSWORDSTTL","Estimado cliente");
-define("SENDPASSWORDSMSG","Tenemos el agrado de informarle su contraseña para el ingreso
-                           al espacio que hemos preparado para nuestros clientes en el portal de 
-                           DFZ Certifica. En el encontrar&aacute; el detalle de los Informes que
-                           ha contratado con nosotros.");
+define("SENDPASSWORDSMSG","<p>Tenemos el agrado de informarle su contraseña para el ingreso
+                           al espacio que hemos preparado para usted en el portal de 
+                           DFZ Certifica.&nbsp;En el encontrar&aacute; el detalle de los Informes que
+                           ha contratado con nosotros.<p>");
 define("SENDPASSWORDSUBJ","Envío de clave de acceso DZF Certifica");
 
 define("consBiblioMSG","Estimado cliente, el siguiente es el detalle de los informes

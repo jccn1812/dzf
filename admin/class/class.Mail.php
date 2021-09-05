@@ -68,7 +68,7 @@ class enviarMail extends classHtml  {
     {
         switch ($this->tipoCorreo) {
             case SENDPASSWORDMAIL:
-                $this->bodyMail = SENDPASSWORDSMSG;
+                $this->bodyMail = SENDPASSWORDSTTL."<br>" .SENDPASSWORDSMSG;
                 $this->subjectMail = SENDPASSWORDSUBJ;
                 break;            
         }
@@ -78,16 +78,18 @@ class enviarMail extends classHtml  {
 	{
         $dest = $this->toEmail;
 		$head  = 'MIME-Version: 1.0' . "\r\n";
-        $head .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $head .= "Content-Type: text/html; charset=UTF-8\r\n";
         $head .= "From:".$this->fromMail . "\r\n";
 		$head .= "To: ". $this->toMail ."\r\n";
 		// Ahora creamos el cuerpo del mensaje
 		
-		$msg.= "<br<br>>pd: Este mensaje ha sido generado autom&aacute;ticamente, por lo que solicitamos no contestar.";
+		$msg.= "<p>Importante: Este mensaje ha sido generado autom&aacute;ticamente, por lo que solicitamos no contestar.</p>";
         
-        echo trim($this->bodyMail).' '.$this->additionalText. ' '. $msg;
 		// Finalmente enviamos el mensaje
-		mail($dest, $this->subjectMail,trim($this->bodyMail).'<br> '.$this->additionalText. ' '. $msg, $head);
+		mail($dest, 
+             $this->subjectMail,
+             trim($this->bodyMail).$this->additionalText. ' '. $msg, 
+             $head);
 
 	 }
 

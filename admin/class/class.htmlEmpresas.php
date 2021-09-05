@@ -489,7 +489,7 @@ class Htmlempresas extends classHtml implements funcionalidad {
 		include_once ("class.Mail.php");
 		$objMail = new enviarMail(SENDPASSWORDMAIL);
 		$objMail->setToMail($this->email);
-		$objMail->setAdditionalText('Su nueva password es '.$this->password);
+		$objMail->setAdditionalText('<p>Su nueva password es '.$this->password).'</p><br>';
         $objMail->setBodyMail();
 		$objMail->sendEmail();
 
