@@ -1,13 +1,23 @@
 <?php
 
+
+
+echo '------------------------------------------<br>';
+echo 'Prueba de conexion a la base de datos DFZ<br>';
+echo '------------------------------------------<br>';
+// Notificar solamente errores de ejecución
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+
+include_once("../common/funciones.php");
 include_once ("constantes.php");
 include_once ("class.database.php");
 include_once ("class.BDusuarios.php");
 
-echo BDserver . '<br>' ;
-echo BDuser . '<br>';
-echo BDpassword . '<br>';
-echo BDBase . '<br>';
+echo "Servidor ". BDserver . '<br>' ;
+echo "Base " . BDBase . '<br>';
+echo "Usuario ". BDuser . '<br>';
+echo "Password " .BDpassword . '<br>';
+echo "Puerto ". BDPort . '<br>';
 
 
 		$objUsuarios = new usuarios ( );
@@ -57,6 +67,7 @@ echo BDBase . '<br>';
 
 
 		//Envio de correo
+		
     	ini_set( 'display_errors', 1 );
     	error_reporting( E_ALL );
 		$from = "test@hostinger-tutorials.com";
@@ -66,8 +77,11 @@ echo BDBase . '<br>';
 		$headers = "From:" . $from;
 		mail($to,$subject,$message, $headers);
 		echo "The email message was sent.";
+		
 
 
 
-
+		echo '<br>Password sugerida<br>';
+		echo generate_string(PERMITTED_CHARS, 10);					
+		
 ?>

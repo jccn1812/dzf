@@ -1,12 +1,13 @@
 <?php
 
+	error_reporting(0);
 
 	require_once '../class/sesion.class.php';
 	include_once '../class/constantes.php';
 
-    error_reporting(E_ERROR);
-	$accion = $_POST["accion"];
-		
+    $tp = $_POST["tp"];
+	
+	
 	if($accion=="logout")
 	{
 		$sesion = new sesion();
@@ -14,7 +15,7 @@
 	}
 
 
-	switch ($_GET['op']) {
+	switch (tp) {
 
 		case 'tp':
 			if (isset($_POST['username']) && !empty($_POST['username']) &&
@@ -24,7 +25,8 @@
 					rdrInterfaceUsuario($username, $password);
 			}
 			else {
-				header("Location: index.php");
+				getLoginMainForm();
+
 			}
 		break;
 
@@ -35,28 +37,26 @@
 
 	function rdrInterfaceUsuario($username, $password) {
 	    
-	    
+		
         include_once ("../class/class.BDusuarios.php");
         
         
-        
+       
 	    $usuarios = new usuarios ( );
 	    $usuarios->setUsuarioNombre($username);
 	    $usuarios->setUsuarioPass($password);
 	    
         $usuarios->DeterminaExiste();
-		$existe = $usuarios->getExiste();
+		$IdUsuario = $usuarios->getIdUsuario();
 		
-		
-        
-		if (empty($existe)) {
+		if (empty($IdUsuario)) {
 		    header("Location: index.php");
 			exit;
 		}
 		$sesion = new sesion();
 		$sesion->setSession('LOGIN_SSN_USR',$username);
 		$sesion->setSession('CLAVE_SSN_USR',$password);
-		$sesion->setSession('IDUSUARIO',$existe);
+		$sesion->setSession('IDUSUARIO',$IdUsuario);
 
 		header("Location: selector.php");
 
@@ -123,6 +123,8 @@
 		echo '<script language="JavaScript" src="../js/jquery/jquery.js" type="text/javascript"></script>
 				<script language="JavaScript" src="../js/validacion.js" type="text/javascript"></script>
 				<script language="JavaScript" src="../js/validacionesDOM.js" type="text/javascript"></script>
+				<script language="JavaScript" src="../js/index.js" type="text/javascript"></script>
+
 
 				<link href="../css/estilo2.css" rel="stylesheet" type="text/css" />
 				<script language="JavaScript">
@@ -145,7 +147,8 @@
 				<div id="container">
                 <div class="estilo" id="contenedor_item" style="margin: 60px 0px 140px 0px;">
 
-		        <form name="formulario" method="post"action="index.php?op=tp">
+		        <form name="formulario" method="post">
+				<input type="hidden" name="tp">
 		          <table width="341" align="center" cellpadding="2" cellspacing="2" class="tabla_listado">
 		              <tr>
 		                <td align="right" colspan="3" class="td_nombreinstitucion">DZFCertifica - Autenticaci&oacute;n </td>
@@ -161,7 +164,7 @@
 		            </tr>
 		            <tr>
 	              	  <td>&nbsp;</td>
-		              <td><input type="button" class="Boton" name="button" onclick="valida()" id="button" value="Ingresar" />
+		              <td><input type="button" class="Boton" name="btnLogin"  id="btnLogin" value="Ingresar" />
 		              </td>
 		            </tr>
 		          </table>

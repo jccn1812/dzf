@@ -1,5 +1,5 @@
 <?php
-require_once '../class/sesion.class.php';
+include_once '../class/sesion.class.php';
 include_once "../class/constantes.php";
 
 session_start();
@@ -636,7 +636,6 @@ function left($string, $count){
  
 function generate_string($input, $strength = 10) {
 
-	echo 'genero';
     $input_length = strlen($input);
     $random_string = '';
     for($i = 0; $i < $strength; $i++) {
@@ -644,7 +643,6 @@ function generate_string($input, $strength = 10) {
         $random_string .= $random_character;
     }
 
-	echo $random_string;
     return $random_string;
  }
 

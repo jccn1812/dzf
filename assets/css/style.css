@@ -167,15 +167,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar a, .navbar a:focus {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0 10px 30px;
-    font-family: "Poppins", sans-serif;
-    font-size: 13px;
-    color: #545454;
-    white-space: nowrap;
-    transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #545454;
+  white-space: nowrap;
+  transition: 0.3s;
 }
 
 .navbar a i, .navbar a:focus i {
@@ -559,13 +559,12 @@ section {
 }
 
 .section-title h2 {
-    font-size: 28px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    position: relative;
-    font-family: "Poppins", sans-serif;
-    text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  font-family: "Poppins", sans-serif;
 }
 
 .section-title h2::after {
@@ -1332,15 +1331,17 @@ section {
 }
 
 .team .member h4 {
-  font-weight: 700;
-  margin-bottom: 2px;
-  font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 2px;
+    font-size: 18px;
+    text-align: left;
 }
 
 .team .member span {
-    font-style: italic;
+    font-style: normal;
     display: block;
     font-size: 13px;
+    text-align: left;
 }
 
 .team .member p {

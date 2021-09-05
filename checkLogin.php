@@ -1,4 +1,7 @@
 <?php
+
+
+
        include_once 'admin/class/sesion.class.php';
        include_once ("admin/class/class.BDempresas.php");
 

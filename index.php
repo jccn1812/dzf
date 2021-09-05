@@ -74,12 +74,12 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 
           <li><strong><a href="contacto.php">CONTACTO</a></strong></li>
           <li><strong><a href="metodos_de_pago.php">METODOS DE PAGO</a></strong></li><br>
-  <?php
-
+         
+<?
         If( empty($isLoged) )
         {
         ?>           
-	<li>&nbsp;&nbsp;&nbsp;&nbsp;<strong><button type="button" class="btn btn-primary btn-sm btn-danger"  data-bs-toggle="modal" data-bs-target="#modalForm">Ingreso de clientes</button></li>
+	<li>&nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-primary btn-sm btn-danger"  data-bs-toggle="modal" data-bs-target="#modalForm">Ingreso de clientes</button></li>
 	<?php 
         }
         ?>
@@ -87,8 +87,6 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
-     
 
     </div>
     <?php
@@ -131,7 +129,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
                             <label class="form-check-label" for="rememberMe">Remember me</label>
                         </div>-->
                         <div class="modal-footer d-block">
-                            <p class="float-start">Si lo desea <a href="#">Reinicie su password</a>&nbsp;aqu&iacute;</p>
+                            <!-- p class="float-start">Si lo desea <a href="#">Reinicie su password</a>&nbsp;aqu&iacute;</p -->
                             <button type="button" id="btnSubmitForm" class="btn btn-danger float-end">Ingresar</button>
                         </div>
                     </form>
@@ -152,11 +150,10 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
         <div class="carousel-inner" role="listbox">
 
           <!-- Slide 1 -->
-          <div class="carousel-item active" style="background: url(assets/img/slide/slide-1.jpg)">
+          <div class="carousel-item active" style="background: url(assets/img/slide/slide-4.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">&nbsp;         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
+                <h2 class="animate__animated animate__fadeInDown"><img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
                 <p class="animate__animated animate__fadeInUp">Es una compañía nacional que entrega servicios de asesoría, ensayos no destructivos, inspección integral de plantas industriales y certificación de equipos móviles.</strong></p>
                 <a href="nuestra_empresa.php" class="btn-get-started animate__animated animate__fadeInUp">Ver más</a>
               </div>
@@ -167,8 +164,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
           <div class="carousel-item" style="background: url(assets/img/slide/slide-2.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
+                <h2 class="animate__animated animate__fadeInDown"><img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
                 <p class="animate__animated animate__fadeInUp"> Especialistas en conocimientos normativos regulatorio en Chile.Con soluciones para asegurar los activos de sus clientes.</p>
                 <a href="objetivos.php" class="btn-get-started animate__animated animate__fadeInUp">Ver más</a>
               </div>
@@ -179,19 +175,17 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
           <div class="carousel-item" style="background: url(assets/img/slide/slide-3.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
-               <h2 class="animate__animated animate__fadeInDown">&nbsp;         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
+               <h2 class="animate__animated animate__fadeInDown"><img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
                 <p class="animate__animated animate__fadeInUp"> A través de un staff de profesionales altamente capacitados, con experiencia en proyectos de envergadura nacional como internacional.</p>
                 <a href="servicios.php" class="btn-get-started animate__animated animate__fadeInUp">Ver más</a>
               </div>
             </div>
           </div>
           <!-- Slide 4 -->
-          <div class="carousel-item" style="background: url(assets/img/slide/slide-4.jpg)">
+          <div class="carousel-item" style="background: url(assets/img/slide/slide-1.jpg)">
             <div class="carousel-container">
               <div class="carousel-content">
-               <h2 class="animate__animated animate__fadeInDown">&nbsp;         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
+               <h2 class="animate__animated animate__fadeInDown"><img src="assets/img/logo_final_sii_agosto.png" width="197" height="164" alt=""/></h2>
                 <p class="animate__animated animate__fadeInUp"> El éxito o fracaso de las empresas dependen en gran parte de su capacidad para identificar los factores que son importantes para los clientes y para vigilar que la empresa funcione de manera competitiva. </p>
                 <a href="servicios.php" class="btn-get-started animate__animated animate__fadeInUp">Ver más</a>
               </div>
@@ -353,31 +347,25 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
-    
-
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">INICIO</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">NUESTRA EMPRESA</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">SERVICIOS</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">VALIDAR DOCUMENTOS</a></li>
-              
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php">INICIO</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="nuestra_empresa.php">NUESTRA EMPRESA</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="servicios.php">SERVICIOS</a></li>
+              <li></li>
             </ul>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4></h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">OBJETIVOS</a></li>
-	            <li><i class="bx bx-chevron-right"></i> <a href="#">BIBLIOTECA DE CLIENTES</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">CONTACTO </a></li>
-              
+              <li><i class="bx bx-chevron-right"></i> <a href="objetivos.php">OBJETIVOS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contacto.php">CONTACTO </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="metodos_de_pago.php">MÉTODOS DE PAGO<br>
+              </a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a><a href="objetivos.php"></a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-contact">
@@ -385,32 +373,26 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
             <p> El Esfuerzo 24, Padre Hurtado, <br>
               Región Metropolitana <br>
               <br>
-              <strong>Teléfono: </strong>(+56) 2 2904 1494 <br>
-              <strong>Celular:</strong> &nbsp;(+56) 9 5169 9440<br>
-              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i> </p>
+              <strong>Teléfono: </strong><a href="tel:+562 2904 1494">(+56) 2 2904 1494 </a><br>
+              <strong>Celular:</strong> &nbsp;<a href="tel:+5695169 9440">(+56) 9 5169 9440</a><br>
+              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i></p>
           </div>
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Nuestra Empresa</h3>
             <p>Es ser una empresa de servicios en la industria, caracterizada por sus buenas prácticas, profesionalismo y especialización aportando soluciones concretas, basado en los compromisos y los requisitos exigidos por nuestros clientes</p>
-            
-            </div>
           </div>
-
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="copyright">
-      © Todos los derechos reservados </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/ -->
-      <a href="https://bootstrapmade.com/">&nbsp;</a> </div>
     </div>
-  </footer><!-- End Footer -->
+    <div class="container">
+      <div class="copyright"> &copy; Todos los derechos reservados</div>
+      <div class="credits">
+        
+        <a href="https://bootstrapmade.com/">&nbsp;</a></div>
+    </div>
+  </footer>
+  <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

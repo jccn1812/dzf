@@ -45,10 +45,6 @@
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:comercial@dzcertifica.cl">comercial@dzfcertifica.cl</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>(+56) 2 2904 1494 - (+56) 9 5169 9440</span></i>
-      </div>
       <div class="social-links d-none d-md-flex align-items-center">
         <a href="#" class=""><i class=""></i></a>
         <a href="#" class=""><i class=""></i></a>
@@ -112,37 +108,42 @@
               <div class="row">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                   <div class="member"> <img src="assets/img/team/team-4.jpg" alt="">
-                    <h4>Capacitaciones:</h4>
-              <span>•Ensayos No Destructivos<br>
-                    • Certificacion Operador de Grúas.<br>
-                    • Certificación de montacargas<br>
-                    • Certificación de supervisor de Izaje<br>
-                    • Certificación Aparejados de cargas/señalero<br>
-                    •Certificación de Rigger</div>
+                    <h4>Capacitación:</h4>
+                    <span>
+• Ensayos No Destructivos
+<br>
+• Certificación Operador de Grúas.
+<br>
+• Certificación de montacargas.
+<br>
+• Certificación de supervisor de Izaje.
+<br>
+• Certificación Aparejados de cargas/señalero.
+<br>
+• Certificación de Rigger. </span></div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                   <div class="member"> <img src="assets/img/team/team-2.jpg" alt="">
                     <h4>Ensayos No Destructivos:</h4>
-                    <span>• Ensayos por Ultrasonidos <br>
-                    • Ensayos por Partículas Magnéticas <br>
-                    • Ensayos por Líquidos Penetrantes <br>
-                    • Pruebas de hermeticidad<br>
-• Inspección de soldadura<br>
-• Inspección de corrosión</span>                  </div>
+                    <span>• Ensayos por Ultrasonidos. <br>
+                    • Ensayos por Partículas Magnéticas. <br>
+                    • Ensayos por Líquidos Penetrantes. <br>
+                    • Pruebas de hermeticidad.<br>
+• Inspección de soldadura.<br>
+• Inspección de corrosión.</span>                  </div>
                 </div>
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                   <div class="member"> <img src="assets/img/team/team-3.jpg" alt="">
                     <h4>Asesoría  de Regularización en estanques SEC/SEREMI</h4>
-                    <span>• Auditoria documental <br>
-                    • Capacitación normativa <br>
-                    • Levantar no conformidades</span>
+                    <span>• Auditoria documenta.l <br>
+                    • Capacitación normativa. <br>
+                    • Levantar no conformidades.</span>
                     
                     
                
               </div>
             </div>
-          </section>
-        <!-- End Counts Section -->
+                <!-- End Counts Section -->
 
 
       </div>
@@ -161,18 +162,19 @@
             <div class="row">
               <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="member"> <img src="assets/img/team/team-1.jpg" alt="">
-                  <h4>Certificación e inspección de equipos de izaje</h4>
-                  <span>• Certificación  para la minería según DS 132 <br>
-• Certificado técnico <br>
+                  <h4>Certificación e inspección <br>
+                  de equipos de izaje</h4>
+                  <span><span class="alert-light">• Certificación  para la minería según DS 132. <br>
+• Certificado técnico. <br>
 • Certificación de camiones izaje<br>
-                  • Certificación de ganchos<br>
-                  • Certificación de cadenas<br>
-                  •Certificación de grilletes<br>
-                  • Certicacion de puentes grúas<br>
-                  • Certificación de equipos de cargadores<br>
-                  • Certificación de grúas de brazo articulado<br>
+                  • Certificación de ganchos.<br>
+                  • Certificación de cadenas.<br>
+                  • Certificación de grilletes.<br>
+                  • Certicacion de puentes grúas.<br>
+                  • Certificación de equipos de cargadores.<br>
+                  • Certificación de grúas de brazo articulado.<br>
                   • Pruebas de Cargas <br>
-                  • Pruebas  hermeticidad en cabinas<br>
+                  • Pruebas  hermeticidad en cabinas</span><br>
                   </span>
                   
                   
@@ -182,13 +184,13 @@
                 <div class="member"> <img src="assets/img/team/team-6.jpg" alt="">
                   <h4>Ingeniería</h4>
                   <span>• Evaluación de integridad estanques y piping <br>
-                  • Electricidad Industrial<br>
+                  • Electricidad Industrial.<br>
 • Instrumentación <br>
-                  • Calibracion de válvulas<br>
-                  • Memorias de cálculos<br>
-                  • Peritaje de fallas<br>
-                  • Evaluación de integridad de plantas industriales<br>
-                  • Dossier de calidad<br>
+                  • Calibracion de válvulas.<br>
+                  • Memorias de cálculos.<br>
+                  • Peritaje de fallas.<br>
+                  • Evaluación de integridad de plantas industriales.<br>
+                  • Dossier de calidad.<br>
                   </span>
                   
                   
@@ -196,8 +198,8 @@
               </div>
               <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="member"> <img src="assets/img/team/team-7.jpg" alt="">
-                  <h4>Sub-Contratación  de Organismos Acreditados Combustibles</h4>
-                  <span>• El objetivo es entregar información trazable al cliente en un corto tiempo</span>                </div>
+                  <h4>Sub-Contratación  de Organismos Acreditados Combustibles.</h4>
+                  <span>• El objetivo es entregar información trazable al cliente en un corto tiempo.</span>                </div>
               </div>
             </div>
           </div>
@@ -215,34 +217,25 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
-    
-        </div>
-      </div>
-    </div>
-
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">INICIO</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">NUESTRA EMPRESA</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">SERVICIOS</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">VALIDAR DOCUMENTOS</a></li>
-              
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php">INICIO</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="nuestra_empresa.php">NUESTRA EMPRESA</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="servicios.php">SERVICIOS</a></li>
+              <li></li>
             </ul>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4></h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">OBJETIVOS</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">BIBLIOTECA DE CLIENTES</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">CONTACTO </a></li>
-              
+              <li><i class="bx bx-chevron-right"></i> <a href="objetivos.php">OBJETIVOS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contacto.php">CONTACTO </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="metodos_de_pago.php">MÉTODOS DE PAGO<br>
+              </a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a><a href="objetivos.php"></a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-contact">
@@ -250,33 +243,29 @@
             <p> El Esfuerzo 24, Padre Hurtado, <br>
               Región Metropolitana <br>
               <br>
-              <strong>Teléfono: </strong>(+56) 2 2904 1494 <br>
-              <strong>Celular:</strong> &nbsp;(+56) 9 5169 9440<br>
-              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i> </p>
+              <strong>Teléfono: </strong><a href="tel:+562 2904 1494">(+56) 2 2904 1494 </a><br>
+              <strong>Celular:</strong> &nbsp;<a href="tel:+5695169 9440">(+56) 9 5169 9440</a><br>
+              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i></p>
           </div>
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Nuestra Empresa</h3>
             <p>Es ser una empresa de servicios en la industria, caracterizada por sus buenas prácticas, profesionalismo y especialización aportando soluciones concretas, basado en los compromisos y los requisitos exigidos por nuestros clientes</p>
-           
-           
-            </div>
           </div>
-
         </div>
       </div>
     </div>
-
+    </div>
     <div class="container">
-      <div class="copyright">
-      &copy; Todos los derechos reservados</div>
+      <div class="copyright"> &copy; Todos los derechos reservados</div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/ -->
-      <a href="https://bootstrapmade.com/">&nbsp;</a> </div>
+        <a href="https://bootstrapmade.com/">&nbsp;</a></div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
+  <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

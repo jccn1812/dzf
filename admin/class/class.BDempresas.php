@@ -80,6 +80,7 @@ class empresas extends Database
   
   public function datosLoginEmpresa()
   {
+
   	$connection = Database::Connect();
   	$this->query = "call sp_EtereusCMS_select_checkLoginClienteEmpresa('".$this->rut."','".$this->password."')";
     $this->result = Database::Reader($this->query,$connection);

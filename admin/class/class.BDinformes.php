@@ -40,7 +40,6 @@ class informes extends Database
   public $pagina;    
   
 
-  
 
   // Los sets para las propiedades
   

@@ -155,6 +155,7 @@ public function DeterminaExiste()
     $this->result = Database::Reader($this->query,$connection);
     $row = mysqli_fetch_object($this->result);
     $this->existe = $row->Existe;
+    $this->IdUsuario = $row->Existe;
     Database::desconectar($connection);
     return $this->result;
 
@@ -165,7 +166,6 @@ public function DeterminaLoginUsuario()
 {
    $connection = Database::Connect();
     $this->query = "CALL sp_EtereusCMS_select_ObtieneDatosUsuarioLogin('$this->UserNombre', '$this->UserPass')";
-
     $this->result = Database::Reader($this->query,$connection);
     $row = mysqli_fetch_object($this->result);
     $this->IdUsuario = $row->IdUsuario;
@@ -175,15 +175,7 @@ public function DeterminaLoginUsuario()
 }
 
 
- public function listaDistribucion()
-  {
-   $connection = Database::Connect();
-   $this->query = "CALL sp_EtereusCMS_select_listaDistibucion()";
-   $this->result = Database::Reader($this->query,$connection);
-   Database::desconectar($connection);
-   return $this->result;
-  }
-
+ 
 
 
 

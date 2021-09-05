@@ -29,31 +29,33 @@ define("BDPort","3306");                  // El puerto
 
 /*
 // Produccion.
-define("BDserver","dzfcertifica.com"); // El servidor de la base de datos
-define("BDuser","root" );              // Usuario de la base de datos
-define("BDpassword","root");           // Password
-define("BDBase","dzf");                // La base de datos
+define("BDserver","localhost"); // El servidor de la base de datos
+define("BDuser","dzfcerti_dzf@localhost" );              // Usuario de la base de datos
+define("BDpassword","dzfcertifica$$");           // Password
+define("BDBase","dzfcerti_dzf");                // La base de datos
 define("BDPort","3306");               // El puerto
+              
 */
 
 
-
-// Constantes para los correos electr�nicos
-define("EMAILADMIN","admin@dfzcertifica.com");// Cuenta de correos para el envio
+// Constantes para los correos electronicos
+define("EMAILADMIN","jccn1812@gmail.com");// Cuenta de correos para el envio
 define("EMAILTO","jccn1812@gmail.com");// Cuenta de correos para la recepción
-define("EMAILADMINPASS","Dfzcertifica2021.");// Cuenta de correos para el envio
+define("EMAILADMINPASS","mishijos2021");// Cuenta de correos para el envio
 define("EMAILSUBJECT","Contacto desde formulario de contacto");// Cuenta de correos para el envio
 define("EMAILHEADERFROM","Formulario de contacto DFZCertifica");// Cuenta de correos para el envio
 
 
 
-define("SERVIDORSMTP","mail.dfzcertifica.com");// Servidor de correos
+define("SERVIDORSMTP","smtp.gmail.com");// Servidor de correos
+
+
+
+
 define("mensajeFormularioContactos","Gracias por su interes en contactarse con nosotros.
                                      Estamos muy interesados en conocer su opini&oacute;n por lo
                                      que le solicitamos llenar los datos de este formulario y hacer clic
                                      en el bot&oacute;n env&iacute;ar.");// Servidor de correos
-
-
 define("SENDPASSWORDMAIL","1"); // Envio de correo con la password generada para el cliente
 define("SENDPASSWORDSTTL","Estimado cliente");
 define("SENDPASSWORDSMSG","Tenemos el agrado de informarle su contraseña para el ingreso
@@ -62,9 +64,10 @@ define("SENDPASSWORDSMSG","Tenemos el agrado de informarle su contraseña para e
                            ha contratado con nosotros.");
 define("SENDPASSWORDSUBJ","Envío de clave de acceso DZF Certifica");
 
-define("consBiblioMSG","Estimado cliente, el siguiente es el detalle de los informes registrados para su empresa
-en nuestro sistema administrativo.");
+define("consBiblioMSG","Estimado cliente, el siguiente es el detalle de los informes
+                        registrados para su empresa en nuestro sistema administrativo."); //Mensaje para el formulario de contacto
 
+define("PERMITTED_CHARS","#%&.,$%()=0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"); //Caracteres para la generación de password
 
 
 

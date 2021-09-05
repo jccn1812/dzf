@@ -1,9 +1,10 @@
 <?php
 
-    include_once ("admin/class/class.BDInformes.php");
+    include_once ("admin/class/class.BDinformes.php");
     include_once ("admin/class/constantes.php");
 		require_once ("admin/class/sesion.class.php");
     
+ 
     session_start();
 
     $sesion = new sesion();
@@ -22,15 +23,14 @@
 
     $paginaActual    = $_POST ["pagina"];
 
-
-  
+    
     
     if(empty($paginaActual))
     {
       $paginaActual = 1;
     };
 
-
+    
 
     $informes = new informes ( );
 		$informes->setIdEmpresa($IdEmpresa);
@@ -50,7 +50,6 @@
 
 
 
-
 		$arrInformes = $informes->listaInformesPorCriterio ();
     
     $registros = $informes->cuentaInformesPorCriterio ();
@@ -66,8 +65,7 @@
       $paginas = round(($filas/consFilasPagina)+.5);
     }   
 
-
-
+  
 
     function muestraTipoInforme($tipoInforme){
       switch($tipoInforme)
@@ -196,10 +194,6 @@
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:comercial@dzcertifica.cl">comercial@dzfcertifica.cl</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>(+56) 2 2904 1494 - (+56 9) 5169 9440</span></i>
--      </div>
       <div class="social-links d-none d-md-flex align-items-center">
         <a href="#" class=""><i class=""></i></a>
         <a href="#" class=""><i class=""></i></a>
@@ -391,8 +385,10 @@
     </section><!-- End Counts Section -->
 
 
-     
-    
+      </div>
+          <div class="col-lg-4 mt-4 mt-lg-0"> </div>
+          <div class="col-lg-4 mt-4 mt-lg-0"> </div>
+        </div>
 
       </div>
     </section><!-- End Featured Section -->
@@ -490,10 +486,10 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">INICIO</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">NUESTRA EMPRESA</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">SERVICIOS</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">VALIDAR DOCUMENTOS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php">INICIO</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="nuestra_empresa.php">NUESTRA EMPRESA</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="servicios.php">SERVICIOS</a></li>
+              <li></li>
               
             </ul>
           </div>
@@ -501,10 +497,11 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4></h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">OBJETIVOS</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">BIBLIOTECA DE CLIENTES</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">CONTACTO </a></li>
-              
+              <li><i class="bx bx-chevron-right"></i> <a href="objetivos.php">OBJETIVOS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contacto.php">CONTACTO </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="metodos_de_pago.php">MÉTODOS DE PAGO<br>
+              </a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a><a href="objetivos.php"></a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-contact">
@@ -512,9 +509,9 @@
             <p> El Esfuerzo 24, Padre Hurtado, <br>
               Región Metropolitana <br>
               <br>
-              <strong>Teléfono: </strong>(+56) 2 2904 1494 <br>
-              <strong>Celular:</strong> &nbsp;(+56) 9 5169 9440<br>
-              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i> </p>
+              <strong>Teléfono: </strong><a href="tel:+562 2904 1494">(+56) 2 2904 1494 </a><br>
+              <strong>Celular:</strong> &nbsp;<a href="tel:+5695169 9440">(+56) 9 5169 9440</a><br>
+              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i></p>
           </div>
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Nuestra Empresa</h3>

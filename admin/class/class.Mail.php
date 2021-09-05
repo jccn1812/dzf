@@ -77,16 +77,17 @@ class enviarMail extends classHtml  {
     public function sendEmail()
 	{
         $dest = $this->toEmail;
-		
-        $head = "From:".$this->fromMail;
+		$head  = 'MIME-Version: 1.0' . "\r\n";
+        $head .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $head .= "From:".$this->fromMail . "\r\n";
 		$head .= "To: ". $this->toMail ."\r\n";
-		$head .= "Content-type: text/html\r\n";
 		// Ahora creamos el cuerpo del mensaje
 		
 		$msg.= "<br<br>>pd: Este mensaje ha sido generado autom&aacute;ticamente, por lo que solicitamos no contestar.";
         
+        echo trim($this->bodyMail).' '.$this->additionalText. ' '. $msg;
 		// Finalmente enviamos el mensaje
-		echo mail($dest, $this->subjectMail,trim($this->bodyMail).' '.$this->additionalText. ' '. $msg, $head);
+		mail($dest, $this->subjectMail,trim($this->bodyMail).'<br> '.$this->additionalText. ' '. $msg, $head);
 
 	 }
 

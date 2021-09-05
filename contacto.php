@@ -35,8 +35,47 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  
+  <style type="text/css">
+  .Estilo17 {
+    color: #9C9C9C
+}
+.Estilo18 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #9C9C9C;
+    line-height: 17px;
+}
+.blanco {font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #FFFFFF;
+	line-height: 17px;
+}
+.texto_empresa {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 12px;
+    color: #CCCCCC;
+    text-align: justify;
+    line-height: 20px;
+}
+  </style>
+<script type="text/javascript">
+function MM_validateForm() { //v4.0
+  if (document.getElementById){
+    var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+    for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=document.getElementById(args[i]);
+      if (val) { nm=val.name; if ((val=val.value)!="") {
+        if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+          if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+        } else if (test!='R') { num = parseFloat(val);
+          if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+          if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+            min=test.substring(8,p); max=test.substring(p+1);
+            if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+      } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+    } if (errors) alert('The following error(s) occurred:\n'+errors);
+    document.MM_returnValue = (errors == '');
+} }
+  </script>
 </head>
 
 <body>
@@ -44,12 +83,7 @@
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center"><i class="bi bi-envelope d-flex align-items-center"><a href="mailto:comercial@dzcertifica.cl">comercial@dzfcertifica.cl</a></i> <i class="bi bi-phone d-flex align-items-center ms-4"><span> (+56) 2 2904 1494 - (+56 9) 5169 9440</span></i></div>
-      <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=linkedin"><i class=""></i></i></a>
+      
       </div>
     </div>
   </section>

@@ -1,9 +1,10 @@
 <?php
 
-    include_once ("admin/class/class.BDInformes.php");
+    include_once ("admin/class/class.BDinformes.php");
     include_once ("admin/class/constantes.php");
-	require_once ("admin/class/sesion.class.php");
+	  require_once ("admin/class/sesion.class.php");
     
+   	
     session_start();
 
     $sesion = new sesion();
@@ -47,9 +48,11 @@
     $informes->setDiasPorVencer(consDiasPorVencer);
     $informes->setPagina($paginaActual);
 
-	$arrInformes = $informes->listaInformesPorCriterio ();
-    
-    $registros = $informes->cuentaInformesPorCriterio ();
+	 $arrInformes = $informes->listaInformesPorCriterio ();
+   
+   mysqli_free_result($arrInformes);  
+   
+   $registros = $informes->cuentaInformesPorCriterio ();
 
 
     $rowDato = mysqli_fetch_object( $registros );
