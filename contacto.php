@@ -1,9 +1,12 @@
 <?php
-       require_once 'admin/class/sesion.class.php';
-       session_start();
+      require_once 'admin/class/sesion.class.php';
+      session_start();
 
-       $sesion = new sesion();
-       $isLoged = $sesion->getSession('ID_EMPRESA');
+      $sesion = new sesion();
+      $isLoged = $sesion->getSession('ID_EMPRESA');
+
+      $name = $_POST ["name"];
+
 
 
 ?>
@@ -142,25 +145,24 @@ function MM_validateForm() { //v4.0
         <div class="row">
           <div class="col-lg-6">
             <div class="info-box mb-4">
-              <i class="bx bx-map"></i>
-              <h3>&nbsp; &nbsp; Dirección</h3>
+              <h3>Dirección</h3>
               <p>&nbsp; &nbsp;El Esfuerzo 24, Padre Hurtado, Región Metropolitana</p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
-            <div class="info-box  mb-4">
-              <i class="bx bx-envelope"></i>
-              <h3>  &nbsp; &nbsp; Email</h3>
-<p><a href="mailto:Comercial@dzfcertifica.cl">&nbsp; &nbsp; Comercial@dzfcertifica.cl</a></p>
+            <div class="info-box  mb-4"><h3> Email</h3>
+<p><a href="mailto:Comercial@dzfcertifica.cl">&nbsp; &nbsp; Comercial@dzfcertifica.cl</a><br>
+  <a href="mailto:Comercial@dzfcertifica.cl"> &nbsp;  &nbsp;&nbsp;&nbsp;Comercial@dzfcertifica.com</a></p>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6">
-            <div class="info-box  mb-4">
-              <i class="bx bx-phone-call"></i>
-              <h3>&nbsp; &nbsp;Teléfono</h3>
-              <p><a href="tel:+56 9 5169 9440">&nbsp; &nbsp; +56 9 5169 9440 - (+56) 2 2904 1494</a></p>
+            <div class="info-box  mb-4"><h3>Teléfono<br>
+              </h3>
+              <p><a href="tel:+56229041494">&nbsp;(+56) 2 2904 1494</a> </p>
+              <p><a href="tel:+56951699440">  (+56) 9 5169 9440 </a></p>
+              <p><a href="tel:+56229041494"> &nbsp;</a></p>
             </div>
           </div>
 
@@ -169,8 +171,12 @@ function MM_validateForm() { //v4.0
         <div class="row">
 
           <div class="col-lg-6 "><a href="https://www.google.com/maps/place/DZF+CERTIFICA/@-33.5564308,-70.7973404,17z/data=!4m5!3m4!1s0x9662dd4835891a6f:0xf920291900105d8d!8m2!3d-33.5563823!4d-70.7973921?hl=es" target="new"> &nbsp;    &nbsp;   &nbsp;  <img src="assets/img/mapa.jpg" width="486" height="318" alt=""/></a></div>
-
-          <div class="col-lg-6">
+<div class="col-lg-6">
+        <?php
+         if (empty($name)) 
+         {
+        ?>
+          
             <form class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
@@ -194,8 +200,18 @@ function MM_validateForm() { //v4.0
               <div class="text-center">
               <button type="button" id="btnMail" class="btn btn-secondary btn-sm btn-danger">Enviar</button>  
             </form>
+         
+          
+          <?php
+         }
+          else
+          {
+            echo "<p>Estimado cliente<br><br> El envio de su mensaje se ha realizado exit&oacute;samente y pronto nos prondremos en contacto con usted.<br><br>
+            Para nosotros su opinion es importante, por lo que estamos constantemente atendiendo sus dudas y consultas.<br><br>Lo invitamos a contactarnos
+            utilizando este formulario y a trav&eacute;s de los canales indicados en esta p&aacute;gina. </p>"; 
+          }
+          ?>
           </div>
-
         </div>
 
       </div>
@@ -215,21 +231,30 @@ function MM_validateForm() { //v4.0
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">INICIO</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">NUESTRA EMPRESA</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">SERVICIOS</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">VALIDAR DOCUMENTOS</a></li>
-              
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php">INICIO</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="nuestra_empresa.php">NUESTRA EMPRESA</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="servicios.php">SERVICIOS</a></li>
+              <li></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4></h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">OBJETIVOS</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">BIBLIOTECA DE CLIENTES</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">CONTACTO </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="objetivos.php">OBJETIVOS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contacto.php">CONTACTO </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="metodos_de_pago.php">MÉTODOS DE PAGO<br>
+              </a></li>
               
+         <?php      
+          If( !empty($isLoged) )
+           {
+         ?>    <li><i class="bx bx-chevron-right"></i>
+              <a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a>
+          <?php
+           }
+          ?> 
+              <a href="objetivos.php"></a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-contact">
@@ -237,9 +262,9 @@ function MM_validateForm() { //v4.0
             <p> El Esfuerzo 24, Padre Hurtado, <br>
               Región Metropolitana <br>
               <br>
-              <strong>Teléfono: </strong>(+56) 2 2904 1494 <br>
-              <strong>Celular:</strong> &nbsp;(+56) 9 5169 9440<br>
-              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i> </p>
+              <strong>Teléfono: </strong><a href="tel:+56229041494">(+56) 2 2904 1494 </a><br>
+              <strong>Celular:</strong> &nbsp;<a href="tel:+56951699440">(+56) 9 5169 9440</a><br>
+              <strong>Email:</strong><a href="mailto:contact@example.com">&nbsp;comercial@dzfcertifica.cl</a></i></p>
           </div>
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Nuestra Empresa</h3>

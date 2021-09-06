@@ -235,7 +235,20 @@
               <li><i class="bx bx-chevron-right"></i> <a href="contacto.php">CONTACTO </a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="metodos_de_pago.php">MÉTODOS DE PAGO<br>
               </a></li>
-              <li><i class="bx bx-chevron-right"></i><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a><a href="objetivos.php"></a></li>
+              <?php
+         
+         If( !empty($isLoged) )
+         {
+           ?> 
+            <li><i class="bx bx-chevron-right"></i><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a>
+            <?php
+        }
+       ?>  
+              
+              
+              
+              
+             <a href="objetivos.php"></a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-contact">

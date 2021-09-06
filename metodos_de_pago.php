@@ -213,7 +213,19 @@
             <h4></h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">OBJETIVOS</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">BIBLIOTECA DE CLIENTES</a></li>
+              <?php
+         
+         If( !empty($isLoged) )
+         {
+           ?> 
+            <li><i class="bx bx-chevron-right"></i><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a>
+            <?php
+        }
+       ?>
+
+
+
+
               <li><i class="bx bx-chevron-right"></i> <a href="#">CONTACTO </a></li>
               
             </ul>
