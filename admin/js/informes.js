@@ -52,13 +52,15 @@ $("#bntSbm").click(function(){
 
     $("#btnSearch").click(function(){
       f.accion.value = "";
+      f.laaccion.value= "1";
       f.submit();
 
     });
 
 
   $("#volverInformes").click(function(){       
-          f.accion.value="";                       
+          f.accion.value="";  
+          f.laaccion.value= "";                     
           f.action="mantenedorInformes.php";
           f.submit();
           })
@@ -81,6 +83,7 @@ $("#volverFormulario").click(function(){
 
 $("#volverPanel").click(function(){                              
                                  f.action="mantenedorInformes.php";
+                                 f.laaccion.value= "";
                                  f.submit();
                                  })
 
@@ -93,6 +96,7 @@ $(".btnVer").click(function(x){
                                 f.action = "";
                                 f.IdEmpresa.value=this.value;                                
 				                        f.accion.value="";
+                                f.laaccion.value= "";
                                 f.action="mantenedorInformes.php";
                                 f.submit();                                                                
                                })
@@ -101,6 +105,7 @@ $(".btnVer").click(function(x){
 $(".btnEdit").click(function(x){
                                 f.IdInforme.value=this.value;                            
 				                        f.accion.value="2";
+                                f.laaccion.value= "";
                                 f.action="mantenedorInformes.php";
                                 f.submit();                                                                
                                })
@@ -119,6 +124,7 @@ $("#ImgExcel").click(function(x){
                                f.action="../../biblioexcel.php";
                                f.target="blank";
                                f.submit(); 
+                               f.laaccion.value= "1"; 
                                f.action="mantenedorInformes.php";
                                
                                 return;

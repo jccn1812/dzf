@@ -91,49 +91,24 @@ $(".btnElim").click(function(x){
                                    f.submit();
                                   }                                                                
                                })
-$(".btnEstadoAnno").click(function(x){
-                                   f.IdAnno.value=this.value;                            
-				                   f.accion.value="6";
-                                   f.action="mantenedorEmpresas.php";
-                                   f.submit();
-                                
-                               })          
                                
-                               
-$(".btnActivaAnno").click(function(x){
-								   f.IdAnno.value=this.value;                            
-				                   f.accion.value="8";
-                                   f.action="mantenedorEmpresas.php";
-                                   f.submit();
-                                   alert("Año contable establecido");
-                               })                                   
-                               
- 
-$("#bntYear").click(function(x){
-	$("#annoNuevo").show();
-	$("#anno").focus();  
-	
-}) 
 
-$("#okanno").click(function(x){
-	if($("#anno").val()=="")
-	{
-	  alert("Debe indicar el a\U00F1o contable a ingresar.");	
-	  return;
-	}	
-	f.accion.value="7";
-	f.submit();
-	
-	
-}) 
-
+$("#salir").click(function(){
+                                f.action="selector.php";
+                                f.submit();
+                                })
                     
                                
                                
           
-$("#salir").click(function(){
-                                f.action="selector.php";
-                                f.submit();
+$("#btnResend").click(function(){
+                                if(confirm("Se enviara una nueva password a la cuenta de correo registrada por el usuario\n\n \u00BFDesea continuar\u003F"))
+                                {
+                                  f.accion.value = "6"; 
+                                  f.action="mantenedorEmpresas.php";
+                                  f.submit();
+                                }
+                                return false;
                                 })
                                                              
                                

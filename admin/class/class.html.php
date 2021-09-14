@@ -171,6 +171,22 @@ class classHtml {
        </div>';
   }
   
+  public function exitoEnvioPass(){
+	echo '
+	<div class="txt_confirm">
+			 <table width="715" align="center">
+				 <tr>
+					 <td width="58"><img src="../images/exito.jpg" width="51" height="47" /></td>
+					 <td width="645"><p align="left">&iexcl;La nueva password ha sido enviada al correo registrado por el cliente!</p></td>
+				 </tr>
+			</table>
+	 </div>';
+}
+
+
+
+
+
   public function creaComboEmpresas($comparador) {
   	include_once("class.BDempresas.php");
   	$objEmpresas = new empresas();

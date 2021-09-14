@@ -135,7 +135,7 @@
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                   <div class="member"> <img src="assets/img/team/team-3.jpg" alt="">
                     <h4>Asesoría  de Regularización en estanques SEC/SEREMI</h4>
-                    <span>• Auditoria documenta.l <br>
+                    <span>• Auditor&iacute;a documental. <br>
                     • Capacitación normativa. <br>
                     • Levantar no conformidades.</span>
                     

@@ -200,7 +200,6 @@ class informes extends Database
                 ".$this->ChequeaNull ($this->filasInforme,"S").",
                 ".$this->pagina .")";
   
-
   $this->result = Database::Reader($this->query,$connection);
   Database::desconectar($connection);
   return $this->result;

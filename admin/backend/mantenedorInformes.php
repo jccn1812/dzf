@@ -61,7 +61,11 @@ $mantenedor->setListaPermisos ( $permisos );
 $mantenedor->setSello ( $sello );
 $mantenedor->setIdEstado ( $IdEstado );
 
+$mantenedor->setlaAccion ( $modificador );
+
+
 $mantenedor->getMantenedor ( $accion );
+
 
 
 

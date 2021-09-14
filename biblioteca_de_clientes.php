@@ -25,13 +25,11 @@
 
     
     
-    if(empty($paginaActual))
+    if(empty($paginaActual) || $paginaActual == 0 )
     {
       $paginaActual = 1;
-    };
-
+    }
     
-
     $informes = new informes ( );
 		$informes->setIdEmpresa($IdEmpresa);
     $informes->setIdTipoInforme($IdTipoInforme);
@@ -77,7 +75,7 @@
           return "Capacitaci&oacute;n";
           break;
         case 3:
-          return "Certificac&oacute;n";		
+          return "Certificaci&oacute;n";		
           break;
       }
     }
@@ -101,6 +99,12 @@
         
     function muestraFechaDDMMAAAA($lafecha){
 
+
+      if(is_null($lafecha) || empty($lafecha) )
+        {
+          return "";
+        } 
+      
       $lafecha = strtotime($lafecha);
       return  date('d/m/Y',$lafecha);
       
@@ -273,7 +277,7 @@
       <input type="hidden" name="pagina" id="pagina" value="">  
       
      <button type="button" class="btn btn-primary btn-sm btn-danger" onclick='exportaExcel()'>Exportar a Excel</button>
-
+     Cantidad de informes : <?php echo $filas ?>
 
       <table id="tblInformes" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered w-auto">
       <thead>

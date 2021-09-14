@@ -105,8 +105,7 @@ class Htmlempresas extends classHtml implements funcionalidad {
 	
    
   public function getMantenedor($accion) {
-  
-  	
+	  	  
   	switch ( $accion) {
 			case "" : //Mostrar la lista de cuentas
 				$this->header ();
@@ -183,15 +182,28 @@ class Htmlempresas extends classHtml implements funcionalidad {
 					$this->footer ();
 
 				}
+				break;
 				
+			case "6" : // Envio de password a cliente
+				$this->enviaNuevaPass ();
+				$this->header ();
+				$this->topTitulo ( $accion );
+				if($this->error=="")
+				   $this->exitoEnvioPass();
+				$this->openForm ( $accion );
 				
-					
+				if ($this->error != "")
+					$this->volverFormulario (); 
+				else
+					$this->volverAtras ();
+				$this->footer ();
+				break;
+			
 					
 					
 
 					
 					
-			break;
 
 		}
 
@@ -224,7 +236,8 @@ class Htmlempresas extends classHtml implements funcionalidad {
            <title>Backend -'.NombreAplicacion.'</title>
            <link href="../css/estilo.css" rel="stylesheet" type="text/css" />
            <script language="JavaScript" src="../js/jquery/jquery.js" type="text/javascript"></script>
-           <script language="JavaScript" src="../js/empresas.js" type="text/javascript"></script>
+           <script language="JavaScript" src="../js/empresas.js?'.time();
+		echo '" type="text/javascript"></script>
 	       <script language="JavaScript" src="../js/validacion.js" type="text/javascript"></script>
 	       <script language="JavaScript" src="../js/validacionesDOM.js" type="text/javascript"></script>
            <script language="JavaScript">
@@ -416,6 +429,20 @@ class Htmlempresas extends classHtml implements funcionalidad {
 			  <td>&nbsp;</td>
               <td>&nbsp;</td>
               <td>&nbsp;</td>';
+
+		if( $laaccion == "2" )
+			  {
+				 echo '
+				 
+					  <td>&nbsp;</td>
+					  <td>&nbsp;</td>
+					  <td>&nbsp;</td>
+					  <td><input type="button" name="bntResend" class="Boton" id="btnResend" value="Reenviar password" /></td>
+					  <td>&nbsp;</td>
+					  <td>&nbsp;</td>
+					  <td>&nbsp;</td>';
+		
+			  }		  
 	echo '
 			  </tr>
           </table>
@@ -423,7 +450,33 @@ class Htmlempresas extends classHtml implements funcionalidad {
 
 	}
 	
-	
+	public function enviaNuevaPass(){
+		
+		$this->generaNuevaPassword();
+		$connection = Database::Connect ();
+		$subquery .= "";
+		$subquery .= $this->ChequeaNuloEx ( $this->IdEmpresa, "N" ) . ',';
+		$subquery .= $this->ChequeaNuloEx ( $this->password, "N" ) ;
+		
+
+		try {
+			
+			$this->query = "call sp_EtereusCMS_update_actualizaPassCliente(" . $subquery . ")";
+			$result = Database::Reader ( $this->query, $connection );
+         
+			if (mysqli_errno ($connection) == 1062) // Controla duplicidad de campo clave
+				throw new Exception ( 'No fue posible la creaci&oacute;n. El nombre de inicio de sesi&oacute;n debe ser &uacute;nico y ya existe para otro usuario.' );
+		} catch ( Exception $e ) {
+			$this->error = $e->getMessage ();
+		}
+
+		Database::desconectar ( $connection );
+		
+		$this->enviaMail();	    
+		return;
+		
+
+	}
 	
 
 	public function InsertUpdate() {
@@ -538,23 +591,6 @@ class Htmlempresas extends classHtml implements funcionalidad {
 		
 	}
 
-	public function openFormRecuperacion() {
-		echo '
-	    <form method="get">
-             <input type="hidden" name="name_sesion" value="">
-             <input type="hidden" name="nombres" value="' . $this->nombre . '">
-             <input type="hidden" name="apellido_pat" value="' . $this->paterno . '">
-             <input type="hidden" name="apellido_mat" value="' . $this->materno . '">
-             <input type="hidden" name="email" value="' . $this->email . '">
-             <input type="hidden" name="fono1" value="' . $this->telefono1 . '">
-             <input type="hidden" name="fono2" value="' . $this->telefono2 . '">
-        ';
-
-	}
-	
-	
-  
-	
 	
 		
 	 

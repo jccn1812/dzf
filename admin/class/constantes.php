@@ -23,6 +23,8 @@ define("msgFooter",$msg);
 define("BDserver","127.0.0.1"); // El servidor de la base de datos
 define("BDuser","root" );              // Usuario de la base de datos
 define("BDpassword","mishijos");           // Password
+//define("BDBase","dzf");            // La base de datos
+
 define("BDBase","dzf");            // La base de datos
 define("BDPort","3306");                  // El puerto
 

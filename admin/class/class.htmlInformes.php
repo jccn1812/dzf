@@ -119,6 +119,9 @@ class Htmlinformes extends classHtml implements funcionalidad {
 			case "" : //Mostrar la lista de cuentas
 				$this->header ();
 				$this->topTitulo ( $accion );
+				if($this->laaccion==""){
+					$this->limpiaControles();
+				}
 				$this->openForm ( $accion );
 				$this->agregar();
 				$this->recolectaRegistros ();
@@ -234,10 +237,10 @@ class Htmlinformes extends classHtml implements funcionalidad {
           
 		  
 		  defineObjetoValidacion("cmbTipoInforme","Tipo de Informe",TYPE_COMBO,OBLIGATORIO); 
-          defineObjetoValidacion("descripcion","Descripcion del Informe",TYPE_STRING,OBLIGATORIO); 
+          defineObjetoValidacion("descripcion","Descripcion del Informe",TYPE_STRING,OPCIONAL); 
           
 		  defineObjetoValidacion("fechaEmision","Fecha de Emision Informe",TYPE_DATE,OBLIGATORIO); 
-          defineObjetoValidacion("fechaVencimiento","Fecha de Vencimiento Informe",TYPE_DATE,OBLIGATORIO);  		
+          defineObjetoValidacion("fechaVencimiento","Fecha de Vencimiento Informe",TYPE_DATE,OPCIONAL);  		
           defineObjetoValidacion("cmbDirector","Usuario Director",TYPE_COMBO,OBLIGATORIO); 
 		  defineObjetoValidacion("cmbInspector","Usuario Inspector",TYPE_COMBO,OBLIGATORIO);  
                   						
@@ -406,7 +409,7 @@ class Htmlinformes extends classHtml implements funcionalidad {
 			 
              		
              <input type="hidden" name="accion" value="">
-             <input type="hidden" name="laaccion" value="' . $laaccion . '">
+             <input type="hidden" name="laaccion" value="' . $this->laaccion . '">
              <input type="hidden" name="perm" value="">
 
            ';
@@ -704,6 +707,19 @@ class Htmlinformes extends classHtml implements funcionalidad {
             <img id="volverPanel" src="../images/volver.gif" width="119" height="30" border="0"/>
           </div>
         </div>';
+   }
+
+   public function limpiaControles(){
+	   $this->numeroInforme = "";
+	   $this->ot = "";
+	   $this->sello = "";
+	   $this->fechaInicioVcto = "";
+	   $this->fechaFinVcto = "";
+	   $this->IdTipoInforme = "";
+	   $this->IdEstado =  "";
+
+
+
    }
 
 	
