@@ -240,7 +240,7 @@ class Htmlinformes extends classHtml implements funcionalidad {
           defineObjetoValidacion("descripcion","Descripcion del Informe",TYPE_STRING,OPCIONAL); 
           
 		  defineObjetoValidacion("fechaEmision","Fecha de Emision Informe",TYPE_DATE,OBLIGATORIO); 
-          defineObjetoValidacion("fechaVencimiento","Fecha de Vencimiento Informe",TYPE_DATE,OPCIONAL);  		
+          defineObjetoValidacion("fechaVencimiento","Fecha de Vencimiento Informe",TYPE_DATE,OBLIGATORIO);  		
           defineObjetoValidacion("cmbDirector","Usuario Director",TYPE_COMBO,OBLIGATORIO); 
 		  defineObjetoValidacion("cmbInspector","Usuario Inspector",TYPE_COMBO,OBLIGATORIO);  
                   						

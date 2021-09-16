@@ -25,7 +25,7 @@ define("BDuser","root" );              // Usuario de la base de datos
 define("BDpassword","mishijos");           // Password
 //define("BDBase","dzf");            // La base de datos
 
-define("BDBase","dzf");            // La base de datos
+define("BDBase","certifica");            // La base de datos
 define("BDPort","3306");                  // El puerto
 
 
@@ -58,7 +58,11 @@ define("mensajeFormularioContactos","Gracias por su interes en contactarse con n
                                      Estamos muy interesados en conocer su opini&oacute;n por lo
                                      que le solicitamos llenar los datos de este formulario y hacer clic
                                      en el bot&oacute;n env&iacute;ar.");// Servidor de correos
-define("SENDPASSWORDMAIL","1"); // Envio de correo con la password generada para el cliente
+
+define("mensajeValidaInforme","Estimado cliente. Utilice este formulario para validar su informe");
+
+
+                                     define("SENDPASSWORDMAIL","1"); // Envio de correo con la password generada para el cliente
 define("SENDPASSWORDSTTL","Estimado cliente");
 define("SENDPASSWORDSMSG","<p>Tenemos el agrado de informarle su contraseña para el ingreso
                            al espacio que hemos preparado para usted en el portal de 

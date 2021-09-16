@@ -521,9 +521,11 @@ class Htmlempresas extends classHtml implements funcionalidad {
 
 		Database::desconectar ( $connection );
 		
+		/*
 		if($this->IdEmpresa == ""){
 		   $this->enviaMail();	    
 		}
+		*/
 		return;
 	}
 

@@ -309,7 +309,7 @@
               ?>
                 
               </th>
-              <th>
+              <th colspan="2">
               <button id="btnSearch" type="submit" class="form-control form-control-sm btn btn-primary btn-sm btn-danger">Buscar</button>
 
               </th>
@@ -323,6 +323,7 @@
 							<th>Fecha Vencimiento</th>
               <th>Estado</th>
               <th>Descripci&oacute;n</th>
+              <th>Categor&iacute;as</th>
             </tr>
 					</thead>
 
@@ -354,6 +355,7 @@
         printf ( '          <td>%s</td>', muestraFechaDDMMAAAA($rowInforme ["fechaVencimiento"]) );      
         printf ( '          <td nowrap>%s</td>', $detalle );      
         printf ( '          <td>%s</td>', $rowInforme ["descripcion"]  );
+        printf ( '          <td>%s</td>', $rowInforme ["strCategoria"]  );
         
 
       }
