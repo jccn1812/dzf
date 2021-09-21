@@ -60,6 +60,7 @@ define("mensajeFormularioContactos","Gracias por su interes en contactarse con n
                                      en el bot&oacute;n env&iacute;ar.");// Servidor de correos
 
 define("mensajeValidaInforme","Estimado cliente. Utilice este formulario para validar su informe");
+define("mensajeValidaInformeNoEncontrado","La busqueda de los datos ingresados no ha tenido resultados. El certificado especificado es INVALIDO.");
 
 
                                      define("SENDPASSWORDMAIL","1"); // Envio de correo con la password generada para el cliente
@@ -72,6 +73,10 @@ define("SENDPASSWORDSUBJ","Envío de clave de acceso DZF Certifica");
 
 define("consBiblioMSG","Estimado cliente, el siguiente es el detalle de los informes
                         registrados para su empresa en nuestro sistema administrativo."); //Mensaje para el formulario de contacto
+
+define("consValidaMSG","Para validar un Certificado, ingrese uno o mas de los criterios solicitados en este formulario. 
+                        Con estos datos le indicaremos el estado del Certificado otorgado por DZF Certifica."); // Mansaje para el validador 
+
 
 define("PERMITTED_CHARS","#%&.,$%()=0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"); //Caracteres para la generación de password
 

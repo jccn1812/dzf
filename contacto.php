@@ -83,14 +83,7 @@ function MM_validateForm() { //v4.0
 
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      
-      </div>
-    </div>
-  </section>
-
+  
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex justify-content-between align-items-center">
@@ -106,6 +99,8 @@ function MM_validateForm() { //v4.0
           <li><strong><a href="index.php">INICIO</a></strong></li>
           <li><strong><a href="nuestra_empresa.php">NUESTRA EMPRESA</a></strong></li>
           <li><strong><a href="servicios.php">SERVICIOS</a></strong></li>
+          <!--li><strong><a href="validar_documentos.php">VALIDAR INFORMES</a></strong></li-->
+
           <li><strong><a href="objetivos.php"><strong>OBJETIVOS</strong></a></strong></li>
           <?php
           
@@ -127,15 +122,18 @@ function MM_validateForm() { //v4.0
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
+    <section id="featured" class="featured">
       <div class="container">
 
-        <ol>
-          <li><a href="index.php">&nbsp;</a></li>
-        </ol>
-        <h2>Contacto</h2>
+      <div class="section-title">
 
-      </div>
+<h2><br>
+  <br>
+Contacto</h2>
+<br>
+
+
+            
     </section><!-- End Breadcrumbs -->
 
     <!-- ======= Contact Section ======= -->
@@ -234,6 +232,8 @@ function MM_validateForm() { //v4.0
               <li><i class="bx bx-chevron-right"></i> <a href="index.php">INICIO</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="nuestra_empresa.php">NUESTRA EMPRESA</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="servicios.php">SERVICIOS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="validar_documentos.php">VALIDAR INFORME</a></li>
+
               <li></li>
             </ul>
           </div>

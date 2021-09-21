@@ -195,18 +195,7 @@
 
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=linkedin"><i class=""></i></i></a>
-      </div>
-    </div>
-  </section>
-
+  
   <!-- ======= Header ======= -->
 <header id="header" class="d-flex align-items-center">
     <div class="container d-flex justify-content-between align-items-center">
@@ -225,7 +214,9 @@
           <li><strong><a href="nuestra_empresa.php">NUESTRA EMPRESA</a></strong></li>
           <li><strong><a href="servicios.php">SERVICIOS</a></strong></li>
           <li><strong><a href="objetivos.php"><strong>OBJETIVOS</strong></a></strong></li>
-          <?php
+          <li><strong><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a></strong></li>
+
+      <?php
           If( !empty($isLoged) )
         {
           ?>  

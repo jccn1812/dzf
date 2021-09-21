@@ -37,6 +37,8 @@ class informes extends Database
   public $filasInforme; 
   public $diasPorVencer;    
 
+  public $desc;
+
   public $pagina;    
   
 
@@ -98,6 +100,13 @@ class informes extends Database
   	$this->diasPorVencer = $diasPorVencer;
   }
 
+
+  function setDesc($desc)
+  {
+  	$this->desc = $desc;
+  }
+
+
   function setPagina($pagina)
   {
   	$this->pagina = $pagina;
@@ -157,6 +166,32 @@ class informes extends Database
     return $this->result;
  
  }
+
+ public function detalleInformePorCriterio(){
+
+  $connection = Database::Connect();
+  $this->query =  "CALL sp_etereusCMS_select_datosInformesPorCriterio(
+                  ".$this->ChequeaNull ($this->numeroInforme,"S").",
+                  ".$this->ChequeaNull ($this->ot,"S").",";
+  
+  if(empty($this->desc)){
+      $this->query = $this->query . "NULL,";
+    }                
+  else
+   {
+      $this->query = $this->query . "'" .$this->desc."'," ; 
+   }
+                  
+   $this->query = $this->query .$this->ChequeaNull ($this->diasPorVencer,"N").")";
+  
+
+    $this->result = Database::Reader($this->query,$connection);
+    Database::desconectar($connection);
+    return $this->result;  
+
+ }
+ 
+
 
  public function listaInformesPorCriterio()
  {

@@ -60,6 +60,8 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
           <li><a class="active" href="index.php"><strong>INICIO</strong></a></li>
           <li><strong><a href="nuestra_empresa.php">NUESTRA EMPRESA</a></strong></li>
           <li><strong><a href="servicios.php">SERVICIOS</a></strong></li>
+          <!--li><strong><a href="validar_documentos.php">VALIDAR INFORMES</a></strong></li-->
+
           <li><strong><a href="objetivos.php">OBJETIVOS</a></strong></li>
           <?php
 
@@ -356,7 +358,8 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
               <li><i class="bx bx-chevron-right"></i> <a href="index.php">INICIO</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="nuestra_empresa.php">NUESTRA EMPRESA</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="servicios.php">SERVICIOS</a></li>
-              <li></li>
+             
+              <li><i class="bx bx-chevron-right"></i> <a href="validar_documentos.php">VALIDAR INFORME</a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-links">
@@ -377,7 +380,7 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>ContactO</h4>
+            <h4>Contacto</h4>
             <p> El Esfuerzo 24, Padre Hurtado, <br>
               Región Metropolitana <br>
               <br>

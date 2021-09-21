@@ -42,18 +42,7 @@
 
 <body>
 
-  <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=linkedin"><i class=""></i></i></a>
-      </div>
-    </div>
-  </section>
-
+  
   <!-- ======= Header ======= -->
 <header id="header" class="d-flex align-items-center">
     <div class="container d-flex justify-content-between align-items-center">
@@ -69,6 +58,8 @@
           <li><strong><a href="index.php">INICIO</a></strong></li>
           <li><strong><a class="active" href="nuestra_empresa.php">NUESTRA EMPRESA</a></strong></li>
           <li><strong><a href="servicios.php">SERVICIOS</a></strong></li>
+          <!--li><strong><a href="validar_documentos.php">VALIDAR INFORMES</a></strong></li-->
+
           <li><strong><a href="objetivos.php"><strong>OBJETIVOS</strong></a></strong></li>
          <?php
          
@@ -96,13 +87,14 @@
     <section id="featured" class="featured">
       <div class="container">
 <!-- ======= About Section ======= -->
-      <div class="section-title">
+<div class="section-title">
 
-          <h2><br>
-            <br>
-          Nuestra Empresa</h2>
-          <br>
+<h2><br>
+  <br>
+Nuestra Empresa</h2>
+<br>
 </div>
+
            <!-- ======= Featured Section ======= -->
     <section id="featured" class="featured">
       <div class="container">
@@ -219,6 +211,8 @@
               <li><i class="bx bx-chevron-right"></i> <a href="index.php">INICIO</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="nuestra_empresa.php">NUESTRA EMPRESA</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="servicios.php">SERVICIOS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="validar_documentos.php">VALIDAR INFORME</a></li>
+
               <li></li>
             </ul>
           </div>

@@ -42,16 +42,6 @@
 <body>
 
   <!-- ======= Top Bar ======= -->
-  <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="social-links d-none d-md-flex align-items-center">
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=""><i class=""></i></a>
-        <a href="#" class=linkedin"><i class=""></i></i></a>
-      </div>
-    </div>
-  </section>
 
   <!-- ======= Header ======= -->
 <header id="header" class="d-flex align-items-center">
@@ -68,6 +58,8 @@
           <li><strong><a href="index.php">INICIO</a></strong></li>
           <li><strong><a href="nuestra_empresa.php">NUESTRA EMPRESA</a></strong></li>
           <li><strong><a href="servicios.php">SERVICIOS</a></strong></li>
+          <!--li><strong><a class="active" href="validar_documentos.php">VALIDAR INFORMES</a></strong></li-->
+
           <li><strong><a href="objetivos.php"><strong>OBJETIVOS</strong></a></strong></li>
           <?php
           
@@ -193,45 +185,40 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
+  <!-- ======= Footer ======= -->
   <footer id="footer">
-<div class="footer-top">
-    <div class="container">
+    <div class="footer-top">
+      <div class="container">
         <div class="row">
-
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">INICIO</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">NUESTRA EMPRESA</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">SERVICIOS</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">VALIDAR DOCUMENTOS</a></li>
-              
+              <li><i class="bx bx-chevron-right"></i> <a href="index.php">INICIO</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="nuestra_empresa.php">NUESTRA EMPRESA</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="servicios.php">SERVICIOS</a></li>
+             
+              <li><i class="bx bx-chevron-right"></i> <a href="validar_documentos.php">VALIDAR INFORME</a></li>
             </ul>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4></h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">OBJETIVOS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="objetivos.php">OBJETIVOS</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="contacto.php">CONTACTO </a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="metodos_de_pago.php">MÉTODOS DE PAGO<br>
+              </a></li>
+         <?php
+              If( !empty($isLoged) )
+        {
+        ?>
+              <li><i class="bx bx-chevron-right"></i><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a>
               <?php
-         
-         If( !empty($isLoged) )
-         {
-           ?> 
-            <li><i class="bx bx-chevron-right"></i><a href="biblioteca_de_clientes.php">BIBLIOTECA DE CLIENTES</a>
-            <?php
         }
-       ?>
-
-
-
-
-              <li><i class="bx bx-chevron-right"></i> <a href="#">CONTACTO </a></li>
-              
+        ?>  
+              <a href="objetivos.php"></a></li>
             </ul>
           </div>
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>ContactO</h4>
+            <h4>Contacto</h4>
             <p> El Esfuerzo 24, Padre Hurtado, <br>
               Región Metropolitana <br>
               <br>
@@ -242,25 +229,19 @@
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>Nuestra Empresa</h3>
             <p>Es ser una empresa de servicios en la industria, caracterizada por sus buenas prácticas, profesionalismo y especialización aportando soluciones concretas, basado en los compromisos y los requisitos exigidos por nuestros clientes</p>
-            
-            </div>
           </div>
-
         </div>
       </div>
     </div>
-
-    <div class="container">
-      <div class="copyright">
-      &copy; Todos los derechos reservados</div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/ -->
-      <a href="https://bootstrapmade.com/">&nbsp;</a> </div>
     </div>
-  </footer><!-- End Footer -->
+    <div class="container">
+      <div class="copyright"> &copy; Todos los derechos reservados</div>
+      <div class="credits">
+        
+        <a href="https://bootstrapmade.com/">&nbsp;</a></div>
+    </div>
+  </footer>
+  <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
